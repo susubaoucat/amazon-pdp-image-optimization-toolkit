@@ -34,7 +34,8 @@ Use this skill to turn Amazon PDP detail page images and A+ content materials in
 4. Read `references/premium-visual-rules.md` before writing image prompts.
 5. Read `references/amazon-image-compliance.md` before finalizing image tasks.
 6. Read `references/output-structure.md` and follow its section order.
-7. Produce a visual production brief that a designer can immediately use to make listing images.
+7. Read `references/html-report-output.md` when the user asks for a deliverable, report, file, shareable page, or HTML output.
+8. Produce a visual production brief that a designer can immediately use to make listing images.
 
 ## Output Rules
 
@@ -48,3 +49,9 @@ Use this skill to turn Amazon PDP detail page images and A+ content materials in
 - A+ content must include an `A+ Storyline Overview`, a `Screen-by-Screen A+ Plan`, and `A+ Module Image Design` with concrete image modules per screen.
 - Keep image prompts specific, premium, and product-first.
 - Keep claims careful and tied to provided evidence.
+
+## Output Mode
+
+- Default deliverable: create an HTML report file and provide a short chat summary when the environment allows file creation.
+- Use Markdown output when the user asks for a quick chat answer, explicitly requests Markdown output, or the agent cannot create files.
+- If creating an HTML report, follow `references/html-report-output.md`.

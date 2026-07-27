@@ -14,5 +14,7 @@ Before producing the final brief, read the canonical skill and its references:
 - `skills/amazon-pdp-visual-optimizer/references/review-insight-to-image-brief.md`
 - `skills/amazon-pdp-visual-optimizer/references/premium-visual-rules.md`
 - `skills/amazon-pdp-visual-optimizer/references/amazon-image-compliance.md`
+- `skills/amazon-pdp-visual-optimizer/references/html-report-output.md`
 
 Keep prompts in one field named `Prompt`. Do not split prompts into positive and negative prompt fields.
+Default deliverable is an HTML report file plus a short chat summary when file creation is available.

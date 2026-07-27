@@ -2,6 +2,8 @@
 
 Use this section order for every Amazon PDP visual optimization brief.
 
+The same structure can be used in Markdown output or an HTML report. For a shareable `.html` deliverable, also follow `html-report-output.md`.
+
 ## 1. Material Summary
 
 State which materials were available:

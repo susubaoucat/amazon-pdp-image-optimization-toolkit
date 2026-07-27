@@ -80,8 +80,15 @@ Use this file to give an AI agent structured Amazon PDP visual optimization cont
 
 ## Output Requirements
 
+Preferred output mode:
+
+- Default deliverable: HTML report
+- Fallback: Markdown output
+- Chat response: short chat summary with the generated file path when an HTML report is created
+
 The agent should output:
 
+0. Executive Summary
 1. Material Summary
 2. Business Goal And Funnel Diagnosis
 3. PDP Visual Diagnosis

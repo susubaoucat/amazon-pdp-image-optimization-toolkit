@@ -54,7 +54,7 @@ Then ask:
 ```text
 Use amazon-pdp-visual-optimizer to analyze this Amazon PDP project.
 I will provide product information, own PDP screenshots, competitor PDP screenshots, own review files, and competitor review files.
-Please output a designer-ready image-by-image PDP optimization brief with one Prompt field per image.
+Please create an HTML report and a short chat summary. The report should include a designer-ready image-by-image PDP optimization brief with one Prompt field per image.
 ```
 
 ### Claude Code
@@ -95,8 +95,13 @@ If performance data is missing, the agent should write hypotheses and a measurem
 
 ## Output
 
-The agent workflow produces:
+Default deliverable: HTML report.
 
+The agent should create a shareable `.html` report when the environment allows file creation, then provide a short chat summary with the generated file path. Markdown output is still supported when the user asks for a quick chat answer or when the agent cannot create files.
+
+The HTML report and Markdown output follow the same structure:
+
+0. Executive Summary
 1. Material Summary
 2. Business Goal And Funnel Diagnosis
 3. PDP Visual Diagnosis
@@ -125,6 +130,12 @@ A+ output includes:
 - A+ Storyline Overview
 - Screen-by-Screen A+ Plan
 - A+ Module Image Design
+
+HTML output guidance lives in:
+
+```text
+skills/amazon-pdp-visual-optimizer/references/html-report-output.md
+```
 
 By default, the workflow focuses on detail page images, secondary gallery images, and A+ content. It does not include Amazon MAIN image recommendations unless main image optimization is explicitly requested.
 
