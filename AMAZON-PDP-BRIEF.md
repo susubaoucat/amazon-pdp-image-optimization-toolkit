@@ -1,6 +1,6 @@
 # AMAZON-PDP-BRIEF.md
 
-Use this file to give an AI agent structured Amazon PDP visual optimization context.
+Use this file to give an AI agent structured Amazon A+ visual optimization context.
 
 ## Product
 
@@ -18,16 +18,16 @@ Use this file to give an AI agent structured Amazon PDP visual optimization cont
 - Local shopping concerns:
 - Visual localization notes:
 
-## Own PDP Materials
+## Own A+ Materials
 
-- Current PDP screenshot files:
-- Current gallery images:
+- Current A+ screenshot files:
+- Current A+ long images:
 - Current A+ screenshots:
 - Known visual problems:
 
-## Competitor PDP Materials
+## Competitor A+ Materials
 
-- Competitor screenshot files:
+- Competitor A+ screenshot files:
 - Competitor product names:
 - Competitor visual strengths:
 - Competitor visual gaps:
@@ -54,9 +54,8 @@ Use this file to give an AI agent structured Amazon PDP visual optimization cont
 
 ## Scope
 
-- Detail page images:
 - A+ content:
-- Secondary gallery images:
+- Secondary gallery/detail images explicitly requested:
 - Main image optimization explicitly requested:
 
 ## Business Metrics
@@ -94,24 +93,22 @@ The agent should output:
 3. PDP Visual Diagnosis
 4. Review Insight to Image Opportunity
 5. Competitor Visual Opportunity
-6. PDP Detail Image Sequence Strategy
-7. Detail Image-by-Image Production Brief
-8. A+ Content Optimization Plan
-9. Premium Visual Taste Rules
-10. Measurement And Post-Launch Review Plan
-11. Final QA Checklist
+6. A+ Content Optimization Plan
+7. Optional Detail Image-by-Image Production Brief
+8. Premium Visual Taste Rules
+9. Measurement And Post-Launch Review Plan
+10. Final QA Checklist
 
-Default scope is detail page images and A+ content. Do not include Amazon MAIN image recommendations unless main image optimization is explicitly requested.
+Default scope is A+ content optimization only. Do not include detail image-by-image production briefs unless secondary gallery or detail image optimization is explicitly requested. Do not include Amazon MAIN image recommendations unless main image optimization is explicitly requested.
 
-Each image brief must include:
+Each A+ module image must include:
 
-- Current Problem
-- Business Hypothesis
-- New Image Task
-- Visual Direction
+- Module Type
+- Content Task
+- Scene Description
 - In-Image Copy
 - Prompt
-- Compliance Notes
-- QA Checklist
+- Design Notes
+- A+ Compliance Notes
 
 Do not split prompts into positive and negative prompt fields. Use only one field named `Prompt`.

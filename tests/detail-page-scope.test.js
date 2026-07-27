@@ -13,14 +13,15 @@ const brief = fs.readFileSync(path.join(root, "AMAZON-PDP-BRIEF.md"), "utf8");
 const combined = `${skill}\n${output}\n${brief}`;
 
 [
-  "detail page images",
   "A+ content",
+  "Default scope is A+ content optimization only",
+  "Do not include detail image-by-image production briefs unless the user explicitly requests secondary gallery or detail image optimization",
   "Do not include Amazon MAIN image recommendations unless the user explicitly requests main image optimization",
   "CVR",
   "add-to-cart",
-  "image click depth"
+  "A+ module engagement"
 ].forEach((token) => {
-  assert(combined.includes(token), `Detail-page scope should include ${token}.`);
+  assert(combined.includes(token), `A+ only scope should include ${token}.`);
 });
 
-console.log("detail page scope ok");
+console.log("a plus only scope ok");

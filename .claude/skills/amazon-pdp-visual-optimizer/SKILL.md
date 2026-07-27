@@ -1,6 +1,6 @@
 ---
 name: amazon-pdp-visual-optimizer
-description: Use when Claude Code needs to analyze Amazon PDP or listing image materials, including product information, PDP screenshots, competitor screenshots, own reviews, competitor reviews, CTR, CVR, conversion rate, share rate, AARRR, ecommerce image strategy, premium prompts, or image-by-image creative briefs.
+description: Use when Claude Code needs to analyze Amazon A+ content materials, including product information, own A+ screenshots, competitor A+ screenshots, own reviews, competitor reviews, CVR, conversion rate, add-to-cart, AARRR, ecommerce visual strategy, premium prompts, or screen-by-screen A+ creative briefs.
 ---
 
 # Amazon PDP Visual Optimizer

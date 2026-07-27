@@ -29,14 +29,16 @@ The HTML report should include:
 4. PDP Visual Diagnosis
 5. Review Insight to Image Opportunity
 6. Competitor Visual Opportunity
-7. PDP Detail Image Sequence Strategy
-8. Detail Image-by-Image Production Brief
-9. A+ Storyline Overview
-10. Screen-by-Screen A+ Plan
-11. A+ Module Image Design
-12. Premium Visual Taste Rules
-13. Measurement And Post-Launch Review Plan
-14. Final QA Checklist
+7. A+ Storyline Overview
+8. Screen-by-Screen A+ Plan
+9. A+ Module Image Design
+10. Premium Visual Taste Rules
+11. Measurement And Post-Launch Review Plan
+12. Final QA Checklist
+
+Optional section only when explicitly requested:
+
+- Detail Image-by-Image Production Brief
 
 ## HTML Style Requirements
 
@@ -52,6 +54,8 @@ The HTML report should include:
 ## Report Writing Rules
 
 - The Executive Summary should be short: scope, key risk, key opportunity, and first priority.
+- Default scope is A+ content optimization only.
+- Do not include detail image-by-image production briefs unless secondary gallery or detail image optimization is explicitly requested.
 - Do not include Amazon MAIN image sections unless main image optimization is explicitly requested.
 - A+ should not be a shallow module list. It must include A+ Storyline Overview, Screen-by-Screen A+ Plan, and A+ Module Image Design.
 - Each detail image and A+ module image should include one `Prompt` field.
@@ -82,7 +86,7 @@ The HTML report should include:
   <body>
     <main>
       <h1>Amazon PDP Visual Optimization Report</h1>
-      <p class="meta">Generated from product materials, PDP screenshots, reviews, competitor references, and business goals.</p>
+      <p class="meta">Generated from product materials, A+ screenshots, reviews, competitor references, and business goals.</p>
     </main>
   </body>
 </html>
