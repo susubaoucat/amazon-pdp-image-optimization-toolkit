@@ -42,14 +42,21 @@ const translations = {
       composition: "构图",
       copy: "文案层级",
       usage: "商品使用方式",
+      currentProblem: "Current Problem",
+      newImageTask: "New Image Task",
+      visualDirection: "Visual Direction",
+      copySuggestion: "Copy Suggestion",
+      complianceNotes: "Compliance Notes",
       prompt: "Prompt",
       qa: "QA 检查清单"
     },
     report: {
       diagnosis: "PDP 图片诊断",
+      sequenceLogic: "PDP 图片顺序逻辑",
       reviewOpportunity: "评论洞察到图片机会点",
       imagePlan: "逐图 PDP 优化方案",
       aplusPlan: "A+ 视觉模块规划",
+      aplusStoryline: "A+ 故事线规划",
       tasteLayer: "高级视觉品味层",
       visualQa: "视觉 QA 检查清单",
       uploadedMaterials: "已上传材料",
@@ -67,11 +74,33 @@ const translations = {
       ownReviewSignal: "我方评论说明，当前 PDP 需要通过图片证据让核心卖点更容易被看见和相信",
       competitorSignal: "竞品评论和参考指向这些视觉机会",
       contentIssue: "当前问题不只是内容覆盖，而是图片清晰度、审美判断和生产方向。",
+      currentProblemFallback: "当前图片问题需要结合上传截图进一步确认，但应优先排查信息拥挤、卖点不清、证据不足和审美廉价感。",
+      complianceDefault: [
+        "不使用绝对化或无法证明的表达。",
+        "不出现竞品品牌名、logo 或误导性对比。",
+        "功能、数据和使用场景必须与真实产品一致。",
+        "AI 生成图不能改变商品结构、材质、比例或配件。"
+      ],
+      sequenceRules: [
+        "先用主图建立清晰商品识别。",
+        "第二张前置最强差异卖点，避免一开始堆参数。",
+        "中段用评论痛点和场景证明功能有效。",
+        "后段补充易用性、维护、收纳或安心信息。",
+        "整组图片从“差异认知 → 场景理由 → 证据证明 → 安心消除顾虑”展开。"
+      ],
       heroBanner: "Hero Banner：把产品建立成目标市场中的高品质解决方案。",
       painModule: "痛点模块：先展示用户问题，再解释产品功能。",
       techModule: "技术或功能证据模块：用克制标签和准确商品细节解释机制。",
       lifestyleModule: "生活方式模块：展示可信的目标市场使用环境。",
       usabilityModule: "易用性模块：降低安装、收纳或维护顾虑。",
+      aplusStorylineItems: [
+        "第一屏：先呈现用户痛点或旧方式不足。",
+        "第二屏：引入产品核心差异，建立“为什么不一样”。",
+        "第三屏：用技术、细节或场景证明功能有效。",
+        "第四屏：处理评论里的关键顾虑，建立信任。",
+        "第五屏：回到生活结果，让用户看到使用后的状态。",
+        "第六屏：用中性对比或品牌信任收尾。"
+      ],
       tasteRules: [
         "以商品为画面主角，每张图只讲一个核心信息。",
         "用克制留白代替拥挤的功能拼贴。",
@@ -121,14 +150,21 @@ const translations = {
       composition: "構図",
       copy: "コピー階層",
       usage: "商品の見せ方",
+      currentProblem: "Current Problem",
+      newImageTask: "New Image Task",
+      visualDirection: "Visual Direction",
+      copySuggestion: "Copy Suggestion",
+      complianceNotes: "Compliance Notes",
       prompt: "Prompt",
       qa: "QA チェックリスト"
     },
     report: {
       diagnosis: "PDP 画像診断",
+      sequenceLogic: "PDP 画像順序ロジック",
       reviewOpportunity: "レビュー洞察から画像機会へ",
       imagePlan: "画像別 PDP 改善プラン",
       aplusPlan: "A+ ビジュアルモジュール計画",
+      aplusStoryline: "A+ ストーリーライン計画",
       tasteLayer: "上質なビジュアル品質レイヤー",
       visualQa: "ビジュアル QA チェックリスト",
       uploadedMaterials: "アップロード素材",
@@ -146,11 +182,33 @@ const translations = {
       ownReviewSignal: "自社レビューから、現在の PDP は画像証拠で主要ベネフィットをより見えやすく、信じやすくする必要があります",
       competitorSignal: "競合レビューと参考から見える画像機会",
       contentIssue: "現在の課題は情報量だけでなく、画像の明快さ、審美性、制作方向にあります。",
+      currentProblemFallback: "現在画像の課題はアップロード画像で確認が必要ですが、まず情報過多、ベネフィット不明瞭、証拠不足、安っぽい見え方を確認します。",
+      complianceDefault: [
+        "証明できない絶対表現を使わない。",
+        "競合ブランド名、ロゴ、誤解を招く比較を出さない。",
+        "機能、数値、使用シーンは実際の商品情報と一致させる。",
+        "AI 生成画像で商品構造、素材、スケール、付属品を変えない。"
+      ],
+      sequenceRules: [
+        "まずメイン画像で商品識別を明確にする。",
+        "2枚目で最も強い差別化ベネフィットを前に出し、冒頭のスペック羅列を避ける。",
+        "中盤でレビュー由来の痛点と使用シーンを証拠化する。",
+        "後半で使いやすさ、メンテナンス、収納、安心情報を補う。",
+        "全体は「差別化認知 → 使用理由 → 証拠 → 不安解消」の順で構成する。"
+      ],
       heroBanner: "Hero Banner：対象市場で上質な解決策として商品を位置づける。",
       painModule: "課題モジュール：商品機能を説明する前に、ユーザーの問題を見せる。",
       techModule: "技術・機能証拠モジュール：控えめなラベルと正確な商品ディテールで仕組みを説明する。",
       lifestyleModule: "ライフスタイルモジュール：対象市場に合う信頼できる使用環境を見せる。",
       usabilityModule: "使いやすさモジュール：設置、収納、メンテナンスへの不安を下げる。",
+      aplusStorylineItems: [
+        "第1画面：ユーザーの痛点または従来方法の不足を見せる。",
+        "第2画面：商品の核心差異を提示し、なぜ違うのかを作る。",
+        "第3画面：技術、ディテール、シーンで効果を証明する。",
+        "第4画面：レビュー上の主要懸念を処理し、信頼を作る。",
+        "第5画面：使用後の生活結果を見せる。",
+        "第6画面：中立的な比較またはブランド信頼で締める。"
+      ],
       tasteRules: [
         "商品を主役にし、1枚の画像で1つのメッセージに集中する。",
         "情報過多のコラージュではなく、余白で上質感を作る。",
@@ -200,14 +258,21 @@ const translations = {
       composition: "Composition",
       copy: "Copy Hierarchy",
       usage: "Product Usage",
+      currentProblem: "Current Problem",
+      newImageTask: "New Image Task",
+      visualDirection: "Visual Direction",
+      copySuggestion: "Copy Suggestion",
+      complianceNotes: "Compliance Notes",
       prompt: "Prompt",
       qa: "QA Checklist"
     },
     report: {
       diagnosis: "PDP Image Diagnosis",
+      sequenceLogic: "PDP Image Sequence Logic",
       reviewOpportunity: "Review Insight to Image Opportunity",
       imagePlan: "Image-by-Image PDP Plan",
       aplusPlan: "A+ Visual Module Plan",
+      aplusStoryline: "A+ Storyline Plan",
       tasteLayer: "Premium Taste Layer",
       visualQa: "Visual QA Checklist",
       uploadedMaterials: "Uploaded Materials",
@@ -225,11 +290,33 @@ const translations = {
       ownReviewSignal: "Own reviews suggest the current PDP should make the core benefit easier to see and believe through image proof",
       competitorSignal: "Competitor reviews and references point to these visual opportunities",
       contentIssue: "The current issue is not only content coverage; it is image clarity, taste, and production direction.",
+      currentProblemFallback: "Current image issues should be confirmed from uploaded screenshots, with priority on clutter, weak benefit clarity, missing proof, and low-end visual taste.",
+      complianceDefault: [
+        "Do not use absolute or unsupported claims.",
+        "Do not show competitor brand names, logos, or misleading comparisons.",
+        "Functions, data, and usage scenes must match the real product.",
+        "AI-generated images must not change product structure, material, scale, or accessories."
+      ],
+      sequenceRules: [
+        "Use the main image to establish clear product recognition first.",
+        "Move the strongest differentiating benefit into the second image instead of opening with parameter clutter.",
+        "Use the middle images to turn review pain points and usage scenes into proof.",
+        "Use later images for usability, maintenance, storage, or confidence-building details.",
+        "Let the full image set follow: differentiation → scene reason → proof → reassurance."
+      ],
       heroBanner: "Hero Banner: Establish the product as a refined solution for the target market.",
       painModule: "Pain Point Module: Show the user problem before explaining the product feature.",
       techModule: "Technology or Feature Proof: Explain the mechanism with restrained labels and accurate product detail.",
       lifestyleModule: "Lifestyle Module: Show a believable target-market environment.",
       usabilityModule: "Usability Module: Reduce setup, storage, or maintenance concerns.",
+      aplusStorylineItems: [
+        "Screen 1: Show the user pain point or the weakness of the old solution.",
+        "Screen 2: Introduce the product's core difference and why it matters.",
+        "Screen 3: Prove the function through technology, details, or scenes.",
+        "Screen 4: Address the strongest review concern and rebuild trust.",
+        "Screen 5: Show the improved life after use.",
+        "Screen 6: Close with neutral comparison or brand confidence."
+      ],
       tasteRules: [
         "Use product-first composition and keep one message per image.",
         "Use refined negative space instead of crowded feature collage layouts.",
@@ -706,16 +793,21 @@ function renderReport(data) {
     .map((image) => {
       const imageText = currentImages[image.key] || image;
       const prompt = makePrompt(imageText, data);
+      const currentProblem = imageText.currentProblem || report.currentProblemFallback;
+      const newImageTask = imageText.newImageTask || imageText.goal;
+      const visualDirection = imageText.visualDirection || imageText.composition;
+      const copySuggestion = imageText.copySuggestion || imageText.copy;
+      const complianceNotes = imageText.complianceNotes || report.complianceDefault;
       return `
         <article class="image-card">
           <h4>${escapeHtml(imageText.name)}</h4>
-          <div class="field"><strong>${escapeHtml(fieldLabels.goal)}</strong><p>${escapeHtml(imageText.goal)}</p></div>
-          <div class="field"><strong>${escapeHtml(fieldLabels.concern)}</strong><p>${escapeHtml(imageText.concern)}</p></div>
-          <div class="field"><strong>${escapeHtml(fieldLabels.concept)}</strong><p>${escapeHtml(imageText.concept)}</p></div>
-          <div class="field"><strong>${escapeHtml(fieldLabels.composition)}</strong><p>${escapeHtml(imageText.composition)}</p></div>
-          <div class="field"><strong>${escapeHtml(fieldLabels.copy)}</strong><p>${escapeHtml(imageText.copy)}</p></div>
+          <div class="field"><strong>${escapeHtml(fieldLabels.currentProblem)}</strong><p>${escapeHtml(currentProblem)}</p></div>
+          <div class="field"><strong>${escapeHtml(fieldLabels.newImageTask)}</strong><p>${escapeHtml(newImageTask)}</p></div>
+          <div class="field"><strong>${escapeHtml(fieldLabels.visualDirection)}</strong><p>${escapeHtml(visualDirection)}</p></div>
+          <div class="field"><strong>${escapeHtml(fieldLabels.copySuggestion)}</strong><p>${escapeHtml(copySuggestion)}</p></div>
           <div class="field"><strong>${escapeHtml(fieldLabels.usage)}</strong><p>${escapeHtml(imageText.usage)}</p></div>
           <div class="field"><strong>${escapeHtml(fieldLabels.prompt)}</strong><p class="prompt">${escapeHtml(prompt)}</p></div>
+          <div class="field"><strong>${escapeHtml(fieldLabels.complianceNotes)}</strong>${makeList(complianceNotes)}</div>
           <div class="field"><strong>${escapeHtml(fieldLabels.qa)}</strong>${makeList(imageText.qa)}</div>
         </article>
       `;
@@ -735,6 +827,11 @@ function renderReport(data) {
       </section>
 
       <section class="report-section">
+        <h3>${escapeHtml(report.sequenceLogic)}</h3>
+        ${makeList(report.sequenceRules)}
+      </section>
+
+      <section class="report-section">
         <h3>${escapeHtml(report.reviewOpportunity)}</h3>
         ${makeList(reviewSignals)}
         <div class="tag-row">
@@ -748,14 +845,8 @@ function renderReport(data) {
       </section>
 
       <section class="report-section">
-        <h3>${escapeHtml(report.aplusPlan)}</h3>
-        ${makeList([
-          report.heroBanner,
-          report.painModule,
-          report.techModule,
-          report.lifestyleModule,
-          report.usabilityModule
-        ])}
+        <h3>${escapeHtml(report.aplusStoryline)}</h3>
+        ${makeList(report.aplusStorylineItems)}
       </section>
 
       <section class="report-section">
