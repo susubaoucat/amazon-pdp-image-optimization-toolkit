@@ -104,6 +104,15 @@
           </div>
 
           <div class="upload-field">
+            <label for="tableFiles">
+              <span data-i18n="tableFilesLabel">Review or PDP data tables</span>
+              <span class="helper" data-i18n="tableFileHelper">Upload CSV or TSV tables for local parsing. XLSX/XLS files are recorded as source material.</span>
+            </label>
+            <input id="tableFiles" type="file" accept=".csv,.tsv,.xlsx,.xls,text/csv,text/tab-separated-values" multiple>
+            <div id="tableFilesPreview" class="file-preview"></div>
+          </div>
+
+          <div class="upload-field">
             <label for="competitorPdpScreenshots">
               <span data-i18n="competitorPdpScreenshotsLabel">Competitor PDP full-page screenshots</span>
               <span class="helper" data-i18n="screenshotHelper">Upload one or more JPG, PNG, or WebP screenshots.</span>
