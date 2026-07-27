@@ -25,7 +25,7 @@ const js = fs.readFileSync(path.join(root, "demo", "app.js"), "utf8");
 });
 
 assert(js.includes("const uploadState"), "JavaScript should track uploaded files.");
-assert(js.includes("handleTextUpload"), "JavaScript should read review text uploads.");
+assert(js.includes("handleReviewUpload"), "JavaScript should read review text and table uploads.");
 assert(js.includes("handleImageUpload"), "JavaScript should preview screenshot uploads.");
 assert(js.includes("uploadedMaterials"), "Generated reports should include uploaded material context.");
 

@@ -86,9 +86,9 @@
           <div class="upload-field">
             <label for="ownReviewFiles">
               <span data-i18n="ownReviewsLabel">Own product reviews</span>
-              <span class="helper" data-i18n="reviewFileHelper">Upload TXT or CSV review files. You can also paste notes below.</span>
+              <span class="helper" data-i18n="reviewFileHelper">Upload TXT, CSV, TSV, XLSX, or XLS review files. You can also paste notes below.</span>
             </label>
-            <input id="ownReviewFiles" type="file" accept=".txt,.csv,text/plain,text/csv" multiple>
+            <input id="ownReviewFiles" type="file" accept=".txt,.csv,.tsv,.xlsx,.xls,text/plain,text/csv,text/tab-separated-values" multiple>
             <div id="ownReviewFilesPreview" class="file-preview"></div>
             <textarea id="ownReviews">Users like the compact design and cleaning performance, but some still want clearer proof that the product is easy to store and maintain.</textarea>
           </div>
@@ -96,20 +96,11 @@
           <div class="upload-field">
             <label for="competitorReviewFiles">
               <span data-i18n="competitorReviewsLabel">Competitor product reviews</span>
-              <span class="helper" data-i18n="reviewFileHelper">Upload TXT or CSV review files. You can also paste notes below.</span>
+              <span class="helper" data-i18n="reviewFileHelper">Upload TXT, CSV, TSV, XLSX, or XLS review files. You can also paste notes below.</span>
             </label>
-            <input id="competitorReviewFiles" type="file" accept=".txt,.csv,text/plain,text/csv" multiple>
+            <input id="competitorReviewFiles" type="file" accept=".txt,.csv,.tsv,.xlsx,.xls,text/plain,text/csv,text/tab-separated-values" multiple>
             <div id="competitorReviewFilesPreview" class="file-preview"></div>
             <textarea id="competitorReviews">Competitor reviews often mention hair tangling, heavy daily handling, difficult dust cup cleaning, and weak edge cleaning.</textarea>
-          </div>
-
-          <div class="upload-field">
-            <label for="tableFiles">
-              <span data-i18n="tableFilesLabel">Review or PDP data tables</span>
-              <span class="helper" data-i18n="tableFileHelper">Upload CSV or TSV tables for local parsing. XLSX/XLS files are recorded as source material.</span>
-            </label>
-            <input id="tableFiles" type="file" accept=".csv,.tsv,.xlsx,.xls,text/csv,text/tab-separated-values" multiple>
-            <div id="tableFilesPreview" class="file-preview"></div>
           </div>
 
           <div class="upload-field">

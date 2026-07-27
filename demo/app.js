@@ -6,7 +6,6 @@ let currentLanguage = "zh";
 const uploadState = {
   ownReviewFiles: [],
   competitorReviewFiles: [],
-  tableFiles: [],
   currentPdpScreenshots: [],
   competitorPdpScreenshots: []
 };
@@ -29,10 +28,8 @@ const translations = {
     competitorPdpScreenshotsLabel: "竞品当前页面总截图",
     ownReviewsLabel: "我方用户评论",
     competitorReviewsLabel: "竞品用户评论",
-    tableFilesLabel: "评论或 PDP 数据表格",
     competitorRefsLabel: "竞品 PDP 或视觉参考说明",
-    reviewFileHelper: "上传 TXT 或 CSV 评论文件，也可以在下方补充粘贴说明。",
-    tableFileHelper: "上传 CSV 或 TSV 表格可本地读取。XLSX/XLS 会作为来源材料记录。",
+    reviewFileHelper: "上传 TXT、CSV、TSV、XLSX 或 XLS 评论文件，也可以在下方补充粘贴说明。",
     screenshotHelper: "上传一张或多张 JPG、PNG、WebP 截图。",
     submitButton: "生成图片方案",
     outputTitle: "输出",
@@ -63,7 +60,6 @@ const translations = {
       fallbackCompetitor: "使用竞品 PDP 截图来识别拥挤表达、缺失证据和视觉同质化。",
       ownReviewFiles: "我方评论文件",
       competitorReviewFiles: "竞品评论文件",
-      tableFiles: "表格文件",
       currentScreenshotFiles: "我方页面截图",
       competitorScreenshotFiles: "竞品页面截图",
       diagnosisGoalLine: "图片组应该从功能罗列转向解决用户购买顾虑。",
@@ -111,10 +107,8 @@ const translations = {
     competitorPdpScreenshotsLabel: "競合の現在 PDP 全体スクリーンショット",
     ownReviewsLabel: "自社商品のレビュー",
     competitorReviewsLabel: "競合商品のレビュー",
-    tableFilesLabel: "レビューまたは PDP データ表",
     competitorRefsLabel: "競合 PDP またはビジュアル参考",
-    reviewFileHelper: "TXT または CSV のレビューファイルをアップロードできます。下にメモを貼り付けることもできます。",
-    tableFileHelper: "CSV または TSV はローカルで読み取れます。XLSX/XLS は参照素材として記録されます。",
+    reviewFileHelper: "TXT、CSV、TSV、XLSX、XLS のレビューファイルをアップロードできます。下にメモを貼り付けることもできます。",
     screenshotHelper: "JPG、PNG、WebP のスクリーンショットを1枚以上アップロードできます。",
     submitButton: "画像プランを生成",
     outputTitle: "出力",
@@ -145,7 +139,6 @@ const translations = {
       fallbackCompetitor: "競合 PDP 画像から、情報過多、証拠不足、ビジュアルの同質化を見つけます。",
       ownReviewFiles: "自社レビューファイル",
       competitorReviewFiles: "競合レビューファイル",
-      tableFiles: "表ファイル",
       currentScreenshotFiles: "自社 PDP スクリーンショット",
       competitorScreenshotFiles: "競合 PDP スクリーンショット",
       diagnosisGoalLine: "画像セットは機能の羅列から、購入前の不安解消へ移行するべきです。",
@@ -193,10 +186,8 @@ const translations = {
     competitorPdpScreenshotsLabel: "Competitor PDP full-page screenshots",
     ownReviewsLabel: "Own product reviews",
     competitorReviewsLabel: "Competitor product reviews",
-    tableFilesLabel: "Review or PDP data tables",
     competitorRefsLabel: "Competitor PDP or visual reference notes",
-    reviewFileHelper: "Upload TXT or CSV review files. You can also paste notes below.",
-    tableFileHelper: "Upload CSV or TSV tables for local parsing. XLSX/XLS files are recorded as source material.",
+    reviewFileHelper: "Upload TXT, CSV, TSV, XLSX, or XLS review files. You can also paste notes below.",
     screenshotHelper: "Upload one or more JPG, PNG, or WebP screenshots.",
     submitButton: "Generate Image Plan",
     outputTitle: "Output",
@@ -227,7 +218,6 @@ const translations = {
       fallbackCompetitor: "Use competitor PDP screenshots to identify clutter, missing proof, and visual sameness.",
       ownReviewFiles: "Own review files",
       competitorReviewFiles: "Competitor review files",
-      tableFiles: "Table files",
       currentScreenshotFiles: "Current PDP screenshots",
       competitorScreenshotFiles: "Competitor PDP screenshots",
       diagnosisGoalLine: "The image set should move from feature listing to shopper concern resolution.",
@@ -532,36 +522,6 @@ function renderImageThumbs(previewId, files) {
   `;
 }
 
-function handleTextUpload(inputId, previewId, stateKey) {
-  const input = document.querySelector(`#${inputId}`);
-  input.addEventListener("change", async () => {
-    const files = Array.from(input.files || []);
-    const loaded = await Promise.all(
-      files.map(
-        (file) =>
-          new Promise((resolve) => {
-            const reader = new FileReader();
-            reader.onload = () =>
-              resolve({
-                name: file.name,
-                size: file.size,
-                text: String(reader.result || "")
-              });
-            reader.onerror = () =>
-              resolve({
-                name: file.name,
-                size: file.size,
-                text: ""
-              });
-            reader.readAsText(file);
-          })
-      )
-    );
-    uploadState[stateKey] = loaded;
-    renderFilePills(previewId, loaded);
-  });
-}
-
 function parseDelimitedTable(text, delimiter) {
   const rows = text
     .split(/\r?\n/)
@@ -575,7 +535,7 @@ function parseDelimitedTable(text, delimiter) {
   };
 }
 
-function handleTableUpload(inputId, previewId, stateKey) {
+function handleReviewUpload(inputId, previewId, stateKey) {
   const input = document.querySelector(`#${inputId}`);
   input.addEventListener("change", async () => {
     const files = Array.from(input.files || []);
@@ -609,13 +569,31 @@ function handleTableUpload(inputId, previewId, stateKey) {
               return;
             }
 
-            resolve({
-              name: file.name,
-              size: file.size,
-              rows: 0,
-              text: "",
-              note: "Excel source"
-            });
+            if (extension === "xlsx" || extension === "xls") {
+              resolve({
+                name: file.name,
+                size: file.size,
+                rows: 0,
+                text: "",
+                note: "Excel source"
+              });
+              return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = () =>
+              resolve({
+                name: file.name,
+                size: file.size,
+                text: String(reader.result || "")
+              });
+            reader.onerror = () =>
+              resolve({
+                name: file.name,
+                size: file.size,
+                text: ""
+              });
+            reader.readAsText(file);
           })
       )
     );
@@ -688,11 +666,9 @@ function readFormData() {
       ...uploadState.ownReviewFiles.map((file) => file.text),
       ...uploadState.competitorReviewFiles.map((file) => file.text)
     ].join("\n"),
-    tableText: uploadState.tableFiles.map((file) => file.text).join("\n"),
     uploadedMaterials: {
       ownReviewFiles: uploadState.ownReviewFiles.map((file) => file.name),
       competitorReviewFiles: uploadState.competitorReviewFiles.map((file) => file.name),
-      tableFiles: uploadState.tableFiles.map((file) => file.name),
       currentPdpScreenshots: uploadState.currentPdpScreenshots.map((file) => file.name),
       competitorPdpScreenshots: uploadState.competitorPdpScreenshots.map((file) => file.name)
     }
@@ -705,11 +681,10 @@ function renderReport(data) {
   const fieldLabels = ui.fieldLabels;
   const benefits = splitTerms(data.benefits);
   const currentImages = localizedImages[currentLanguage] || localizedImages.en;
-  const detectedConcerns = detectConcerns(data.ownReviews, data.competitorReviews, data.uploadText, data.tableText, data.currentIssues, data.competitorRefs);
+  const detectedConcerns = detectConcerns(data.ownReviews, data.competitorReviews, data.uploadText, data.currentIssues, data.competitorRefs);
   const uploadedMaterials = [
     `${report.ownReviewFiles}: ${data.uploadedMaterials.ownReviewFiles.length ? data.uploadedMaterials.ownReviewFiles.join(", ") : "0"}`,
     `${report.competitorReviewFiles}: ${data.uploadedMaterials.competitorReviewFiles.length ? data.uploadedMaterials.competitorReviewFiles.join(", ") : "0"}`,
-    `${report.tableFiles}: ${data.uploadedMaterials.tableFiles.length ? data.uploadedMaterials.tableFiles.join(", ") : "0"}`,
     `${report.currentScreenshotFiles}: ${data.uploadedMaterials.currentPdpScreenshots.length ? data.uploadedMaterials.currentPdpScreenshots.join(", ") : "0"}`,
     `${report.competitorScreenshotFiles}: ${data.uploadedMaterials.competitorPdpScreenshots.length ? data.uploadedMaterials.competitorPdpScreenshots.join(", ") : "0"}`
   ];
@@ -800,9 +775,8 @@ languageSelect.addEventListener("change", (event) => {
   applyLanguage(event.target.value);
 });
 
-handleTextUpload("ownReviewFiles", "ownReviewFilesPreview", "ownReviewFiles");
-handleTextUpload("competitorReviewFiles", "competitorReviewFilesPreview", "competitorReviewFiles");
-handleTableUpload("tableFiles", "tableFilesPreview", "tableFiles");
+handleReviewUpload("ownReviewFiles", "ownReviewFilesPreview", "ownReviewFiles");
+handleReviewUpload("competitorReviewFiles", "competitorReviewFilesPreview", "competitorReviewFiles");
 handleImageUpload("currentPdpScreenshots", "currentPdpScreenshotsPreview", "currentPdpScreenshots");
 handleImageUpload("competitorPdpScreenshots", "competitorPdpScreenshotsPreview", "competitorPdpScreenshots");
 
