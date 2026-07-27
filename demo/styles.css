@@ -145,6 +145,19 @@ label {
   font-weight: 700;
 }
 
+.upload-field {
+  display: grid;
+  gap: 10px;
+}
+
+.helper {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
 input,
 select,
 textarea {
@@ -158,6 +171,12 @@ textarea {
   line-height: 1.4;
   padding: 11px 12px;
   outline: none;
+}
+
+input[type="file"] {
+  padding: 10px;
+  border-style: dashed;
+  cursor: pointer;
 }
 
 textarea {
@@ -282,6 +301,68 @@ button:hover {
   font-size: 12px;
   font-weight: 800;
   padding: 5px 10px;
+}
+
+.file-preview {
+  display: grid;
+  gap: 8px;
+}
+
+.file-preview:empty {
+  display: none;
+}
+
+.file-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #f8fafb;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 7px 9px;
+}
+
+.file-pill span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.thumb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(82px, 1fr));
+  gap: 8px;
+}
+
+.thumb {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #f8fafb;
+}
+
+.thumb img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.thumb span {
+  display: block;
+  overflow: hidden;
+  padding: 6px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 @media (max-width: 980px) {

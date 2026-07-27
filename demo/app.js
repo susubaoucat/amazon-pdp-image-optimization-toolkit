@@ -3,6 +3,13 @@ const output = document.querySelector("#output");
 const languageSelect = document.querySelector("#languageSelect");
 let currentLanguage = "zh";
 
+const uploadState = {
+  ownReviewFiles: [],
+  competitorReviewFiles: [],
+  currentPdpScreenshots: [],
+  competitorPdpScreenshots: []
+};
+
 const translations = {
   zh: {
     documentTitle: "Amazon PDP 图片优化工具包",
@@ -17,9 +24,13 @@ const translations = {
     goalLabel: "优化目标",
     benefitsLabel: "核心产品卖点",
     currentIssuesLabel: "当前 PDP 截图或图片问题说明",
+    currentPdpScreenshotsLabel: "我方当前页面总截图",
+    competitorPdpScreenshotsLabel: "竞品当前页面总截图",
     ownReviewsLabel: "我方用户评论",
     competitorReviewsLabel: "竞品用户评论",
     competitorRefsLabel: "竞品 PDP 或视觉参考说明",
+    reviewFileHelper: "上传 TXT 或 CSV 评论文件，也可以在下方补充粘贴说明。",
+    screenshotHelper: "上传一张或多张 JPG、PNG、WebP 截图。",
     submitButton: "生成图片方案",
     outputTitle: "输出",
     outputCopy: "复制到创意 Brief、AI 图片工作流或生产检查清单中使用。",
@@ -41,11 +52,16 @@ const translations = {
       aplusPlan: "A+ 视觉模块规划",
       tasteLayer: "高级视觉品味层",
       visualQa: "视觉 QA 检查清单",
+      uploadedMaterials: "已上传材料",
       currentIssue: "当前 PDP 问题",
       optimizationGoal: "优化目标",
       competitorReference: "竞品参考",
       targetMarket: "目标市场",
       fallbackCompetitor: "使用竞品 PDP 截图来识别拥挤表达、缺失证据和视觉同质化。",
+      ownReviewFiles: "我方评论文件",
+      competitorReviewFiles: "竞品评论文件",
+      currentScreenshotFiles: "我方页面截图",
+      competitorScreenshotFiles: "竞品页面截图",
       diagnosisGoalLine: "图片组应该从功能罗列转向解决用户购买顾虑。",
       localPremiumLine: "视觉场景需要本地化、可信，并保持高级感。",
       ownReviewSignal: "我方评论说明，当前 PDP 需要通过图片证据让核心卖点更容易被看见和相信",
@@ -87,9 +103,13 @@ const translations = {
     goalLabel: "最適化目標",
     benefitsLabel: "主要ベネフィット",
     currentIssuesLabel: "現在の PDP 画像メモ",
+    currentPdpScreenshotsLabel: "自社の現在 PDP 全体スクリーンショット",
+    competitorPdpScreenshotsLabel: "競合の現在 PDP 全体スクリーンショット",
     ownReviewsLabel: "自社商品のレビュー",
     competitorReviewsLabel: "競合商品のレビュー",
     competitorRefsLabel: "競合 PDP またはビジュアル参考",
+    reviewFileHelper: "TXT または CSV のレビューファイルをアップロードできます。下にメモを貼り付けることもできます。",
+    screenshotHelper: "JPG、PNG、WebP のスクリーンショットを1枚以上アップロードできます。",
     submitButton: "画像プランを生成",
     outputTitle: "出力",
     outputCopy: "クリエイティブブリーフ、AI 画像ワークフロー、制作チェックリストにコピーして使えます。",
@@ -111,11 +131,16 @@ const translations = {
       aplusPlan: "A+ ビジュアルモジュール計画",
       tasteLayer: "上質なビジュアル品質レイヤー",
       visualQa: "ビジュアル QA チェックリスト",
+      uploadedMaterials: "アップロード素材",
       currentIssue: "現在の PDP 課題",
       optimizationGoal: "最適化目標",
       competitorReference: "競合参考",
       targetMarket: "対象市場",
       fallbackCompetitor: "競合 PDP 画像から、情報過多、証拠不足、ビジュアルの同質化を見つけます。",
+      ownReviewFiles: "自社レビューファイル",
+      competitorReviewFiles: "競合レビューファイル",
+      currentScreenshotFiles: "自社 PDP スクリーンショット",
+      competitorScreenshotFiles: "競合 PDP スクリーンショット",
       diagnosisGoalLine: "画像セットは機能の羅列から、購入前の不安解消へ移行するべきです。",
       localPremiumLine: "ビジュアルシーンは現地市場に合い、信頼感と上質感を保つ必要があります。",
       ownReviewSignal: "自社レビューから、現在の PDP は画像証拠で主要ベネフィットをより見えやすく、信じやすくする必要があります",
@@ -157,9 +182,13 @@ const translations = {
     goalLabel: "Optimization goal",
     benefitsLabel: "Core product benefits",
     currentIssuesLabel: "Current PDP screenshots or image notes",
+    currentPdpScreenshotsLabel: "Current PDP full-page screenshots",
+    competitorPdpScreenshotsLabel: "Competitor PDP full-page screenshots",
     ownReviewsLabel: "Own product reviews",
     competitorReviewsLabel: "Competitor product reviews",
     competitorRefsLabel: "Competitor PDP or visual reference notes",
+    reviewFileHelper: "Upload TXT or CSV review files. You can also paste notes below.",
+    screenshotHelper: "Upload one or more JPG, PNG, or WebP screenshots.",
     submitButton: "Generate Image Plan",
     outputTitle: "Output",
     outputCopy: "Copy this into a creative brief, AI image workflow, or production checklist.",
@@ -181,11 +210,16 @@ const translations = {
       aplusPlan: "A+ Visual Module Plan",
       tasteLayer: "Premium Taste Layer",
       visualQa: "Visual QA Checklist",
+      uploadedMaterials: "Uploaded Materials",
       currentIssue: "Current PDP issue",
       optimizationGoal: "Optimization goal",
       competitorReference: "Competitor reference",
       targetMarket: "Target market",
       fallbackCompetitor: "Use competitor PDP screenshots to identify clutter, missing proof, and visual sameness.",
+      ownReviewFiles: "Own review files",
+      competitorReviewFiles: "Competitor review files",
+      currentScreenshotFiles: "Current PDP screenshots",
+      competitorScreenshotFiles: "Competitor PDP screenshots",
       diagnosisGoalLine: "The image set should move from feature listing to shopper concern resolution.",
       localPremiumLine: "Visual scenes should feel local, believable, and premium.",
       ownReviewSignal: "Own reviews suggest the current PDP should make the core benefit easier to see and believe through image proof",
@@ -393,37 +427,37 @@ const localizedImages = {
 
 const concernPatterns = [
   {
-    keys: ["hair", "tangle", "pet"],
+    keys: ["hair", "tangle", "pet", "毛发", "缠毛", "宠物", "髪", "絡ま", "ペット"],
     label: "hair tangling and pet-hair cleaning",
     opportunity: "Add an anti-tangle proof image with a brush close-up and realistic hair-management evidence."
   },
   {
-    keys: ["store", "storage", "compact", "fold", "space", "apartment"],
+    keys: ["store", "storage", "compact", "fold", "space", "apartment", "收纳", "折叠", "小户型", "空间", "収納", "折りたた", "省スペース"],
     label: "compact storage and small-space fit",
     opportunity: "Add a folded-storage image that proves the product fits a compact home or apartment corner."
   },
   {
-    keys: ["heavy", "weight", "lightweight", "carry", "handling"],
+    keys: ["heavy", "weight", "lightweight", "carry", "handling", "重", "轻", "重量", "手持", "持ち", "軽い", "重い"],
     label: "daily handling and weight",
     opportunity: "Add a lightweight handling image with believable one-hand use or movement proof."
   },
   {
-    keys: ["clean", "maintenance", "dust cup", "wash", "empty"],
+    keys: ["clean", "maintenance", "dust cup", "wash", "empty", "清洁", "维护", "尘杯", "水洗", "倒垃圾", "メンテ", "掃除", "ダストカップ", "洗える"],
     label: "maintenance effort",
     opportunity: "Add an easy-maintenance image showing empty, rinse, and reattach steps only when supported by product facts."
   },
   {
-    keys: ["suction", "power", "weak", "edge", "corner", "crumb", "dust"],
+    keys: ["suction", "power", "weak", "edge", "corner", "crumb", "dust", "吸力", "清洁力", "边角", "灰尘", "碎屑", "吸引力", "弱い", "隅", "ほこり"],
     label: "cleaning power and edge performance",
     opportunity: "Add a cleaning proof infographic tied to realistic debris, edge areas, and daily household mess."
   },
   {
-    keys: ["noise", "quiet", "loud"],
+    keys: ["noise", "quiet", "loud", "噪音", "安静", "吵", "静音", "音", "うるさい", "静か"],
     label: "noise and quiet use",
     opportunity: "Add a quiet-use scene that shows daily cleaning without disrupting family, work, or apartment life."
   },
   {
-    keys: ["battery", "runtime", "charge", "charging"],
+    keys: ["battery", "runtime", "charge", "charging", "续航", "电池", "充电", "バッテリー", "稼働時間", "充電"],
     label: "runtime and charging confidence",
     opportunity: "Add a runtime or charging clarity image with careful, supportable claims and clean hierarchy."
   }
@@ -448,6 +482,86 @@ function escapeHtml(text) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
+}
+
+function fileSizeLabel(bytes) {
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${Math.round(bytes / 1024)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
+
+function renderFilePills(previewId, files) {
+  const preview = document.querySelector(`#${previewId}`);
+  preview.innerHTML = files
+    .map((file) => `<div class="file-pill"><span>${escapeHtml(file.name)}</span><small>${escapeHtml(fileSizeLabel(file.size))}</small></div>`)
+    .join("");
+}
+
+function renderImageThumbs(previewId, files) {
+  const preview = document.querySelector(`#${previewId}`);
+  if (!files.length) {
+    preview.innerHTML = "";
+    return;
+  }
+  preview.innerHTML = `
+    <div class="thumb-grid">
+      ${files
+        .map(
+          (file) => `
+            <figure class="thumb">
+              <img src="${escapeHtml(file.url)}" alt="${escapeHtml(file.name)}">
+              <span>${escapeHtml(file.name)}</span>
+            </figure>
+          `
+        )
+        .join("")}
+    </div>
+  `;
+}
+
+function handleTextUpload(inputId, previewId, stateKey) {
+  const input = document.querySelector(`#${inputId}`);
+  input.addEventListener("change", async () => {
+    const files = Array.from(input.files || []);
+    const loaded = await Promise.all(
+      files.map(
+        (file) =>
+          new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onload = () =>
+              resolve({
+                name: file.name,
+                size: file.size,
+                text: String(reader.result || "")
+              });
+            reader.onerror = () =>
+              resolve({
+                name: file.name,
+                size: file.size,
+                text: ""
+              });
+            reader.readAsText(file);
+          })
+      )
+    );
+    uploadState[stateKey] = loaded;
+    renderFilePills(previewId, loaded);
+  });
+}
+
+function handleImageUpload(inputId, previewId, stateKey) {
+  const input = document.querySelector(`#${inputId}`);
+  input.addEventListener("change", () => {
+    uploadState[stateKey].forEach((file) => {
+      if (file.url) URL.revokeObjectURL(file.url);
+    });
+    uploadState[stateKey] = Array.from(input.files || []).map((file) => ({
+      name: file.name,
+      size: file.size,
+      url: URL.createObjectURL(file)
+    }));
+    renderImageThumbs(previewId, uploadState[stateKey]);
+  });
 }
 
 function makePrompt(image, data) {
@@ -494,7 +608,17 @@ function readFormData() {
     currentIssues: value("currentIssues") || "Current PDP images need clearer visual proof.",
     ownReviews: value("ownReviews"),
     competitorReviews: value("competitorReviews"),
-    competitorRefs: value("competitorRefs")
+    competitorRefs: value("competitorRefs"),
+    uploadText: [
+      ...uploadState.ownReviewFiles.map((file) => file.text),
+      ...uploadState.competitorReviewFiles.map((file) => file.text)
+    ].join("\n"),
+    uploadedMaterials: {
+      ownReviewFiles: uploadState.ownReviewFiles.map((file) => file.name),
+      competitorReviewFiles: uploadState.competitorReviewFiles.map((file) => file.name),
+      currentPdpScreenshots: uploadState.currentPdpScreenshots.map((file) => file.name),
+      competitorPdpScreenshots: uploadState.competitorPdpScreenshots.map((file) => file.name)
+    }
   };
 }
 
@@ -504,7 +628,13 @@ function renderReport(data) {
   const fieldLabels = ui.fieldLabels;
   const benefits = splitTerms(data.benefits);
   const currentImages = localizedImages[currentLanguage] || localizedImages.en;
-  const detectedConcerns = detectConcerns(data.ownReviews, data.competitorReviews, data.currentIssues, data.competitorRefs);
+  const detectedConcerns = detectConcerns(data.ownReviews, data.competitorReviews, data.uploadText, data.currentIssues, data.competitorRefs);
+  const uploadedMaterials = [
+    `${report.ownReviewFiles}: ${data.uploadedMaterials.ownReviewFiles.length ? data.uploadedMaterials.ownReviewFiles.join(", ") : "0"}`,
+    `${report.competitorReviewFiles}: ${data.uploadedMaterials.competitorReviewFiles.length ? data.uploadedMaterials.competitorReviewFiles.join(", ") : "0"}`,
+    `${report.currentScreenshotFiles}: ${data.uploadedMaterials.currentPdpScreenshots.length ? data.uploadedMaterials.currentPdpScreenshots.join(", ") : "0"}`,
+    `${report.competitorScreenshotFiles}: ${data.uploadedMaterials.competitorPdpScreenshots.length ? data.uploadedMaterials.competitorPdpScreenshots.join(", ") : "0"}`
+  ];
   const reviewSignals = [
     `${report.ownReviewSignal}: ${benefits[0] || data.productName}.`,
     `${report.competitorSignal}: ${detectedConcerns.map((item) => item.label).join(", ")}.`,
@@ -547,6 +677,11 @@ function renderReport(data) {
       </section>
 
       <section class="report-section">
+        <h3>${escapeHtml(report.uploadedMaterials)}</h3>
+        ${makeList(uploadedMaterials)}
+      </section>
+
+      <section class="report-section">
         <h3>${escapeHtml(report.reviewOpportunity)}</h3>
         ${makeList(reviewSignals)}
         <div class="tag-row">
@@ -586,6 +721,11 @@ function renderReport(data) {
 languageSelect.addEventListener("change", (event) => {
   applyLanguage(event.target.value);
 });
+
+handleTextUpload("ownReviewFiles", "ownReviewFilesPreview", "ownReviewFiles");
+handleTextUpload("competitorReviewFiles", "competitorReviewFilesPreview", "competitorReviewFiles");
+handleImageUpload("currentPdpScreenshots", "currentPdpScreenshotsPreview", "currentPdpScreenshots");
+handleImageUpload("competitorPdpScreenshots", "competitorPdpScreenshotsPreview", "competitorPdpScreenshots");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
