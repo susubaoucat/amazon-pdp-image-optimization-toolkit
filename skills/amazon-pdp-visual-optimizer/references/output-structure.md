@@ -14,8 +14,11 @@ State which materials were available:
 - Competitor reviews
 - Target market
 - Optimization goal
+- Scope: detail page images, A+ content, secondary gallery images, or main image only if explicitly requested
 
 Also state any missing or unreadable material.
+
+Default scope: detail page images and A+ content. Do not include Amazon MAIN image recommendations unless the user explicitly requests main image optimization or provides main-image materials.
 
 ## 2. Business Goal And Funnel Diagnosis
 
@@ -24,12 +27,16 @@ Connect the project to business data awareness:
 - CTR
 - CVR
 - Conversion rate
+- add-to-cart
+- image click depth
 - Share rate
 - AARRR funnel stage
 - Data review
 - Design effect validation
 
 If real data is not provided, describe the hypothesis and the data needed to validate it.
+
+For detail page and A+ optimization, prioritize CVR, conversion rate, add-to-cart, image click depth, module engagement, review concern changes, and post-launch data review. Mention CTR only when the scope includes main image, search image, or ad creative optimization.
 
 ## 3. PDP Visual Diagnosis
 
@@ -54,16 +61,16 @@ Do not quote review excerpts unless the user asks. Summarize patterns and conver
 
 Explain what competitors communicate better and where they leave visual gaps.
 
-## 6. PDP Image Sequence Strategy
+## 6. PDP Detail Image Sequence Strategy
 
-Recommend a new image order. Each image should have a clear conversion job.
+Recommend a new detail page image order. Each image should have a clear conversion job. Do not start with a MAIN image unless main-image optimization is explicitly in scope.
 
 Use this format:
 
 | New Order | Image Role | Funnel Role | Conversion Job | Why It Matters |
 | --- | --- | --- | --- | --- |
 
-## 7. Image-by-Image Production Brief
+## 7. Detail Image-by-Image Production Brief
 
 For each image, use:
 
@@ -78,15 +85,58 @@ For each image, use:
 - Compliance Notes:
 - QA Checklist:
 
-## 8. A+ Module Direction
+## 8. A+ Content Optimization Plan
 
-Plan a simple story flow:
+Do not treat A+ as a short module list. A+ should be a full page story system that extends the detail image strategy.
+
+### A+ Storyline Overview
+
+Use a table:
+
+| Screen | Story Task | Narrative Arc | Emotional Curve | Business Role |
+| --- | --- | --- | --- | --- |
+
+Build the story as a sequence, for example:
 
 1. Premium brand or flagship opening
 2. Pain point and product intervention
 3. Technical or functional proof
 4. Real usage context
 5. Maintenance, storage, comparison, or trust module
+
+Choose the actual story order from the uploaded PDP, reviews, competitor page, and business problem. If the highest-risk review concern is trust-related, add a dedicated trust-repair screen.
+
+### Screen-by-Screen A+ Plan
+
+For each screen, use:
+
+#### Screen N: Screen Name
+
+- Story Task:
+- Current A+ Problem:
+- Business Hypothesis:
+- Visual Recommendation:
+- Copy Direction:
+- Design Notes:
+- A+ Compliance Notes:
+
+### A+ Module Image Design
+
+For each A+ screen, provide 3-5 concrete module image ideas. Use this format:
+
+#### Screen N Module Images
+
+##### Image N-N: Image Title
+
+- Module Type:
+- Content Task:
+- Scene Description:
+- In-Image Copy:
+- Prompt:
+- Design Notes:
+- A+ Compliance Notes:
+
+Design rule: within one A+ screen, use no more than one pure lifestyle or atmosphere image. Most images should embed the product, product part, display, brush head, tank, base, accessory, app screen, or real usage proof when those materials are provided.
 
 ## 9. Premium Visual Taste Rules
 
@@ -96,8 +146,10 @@ List the visual rules that should guide image creation.
 
 Define how the design should be judged after launch:
 
-- CTR for main image and search/listing attraction
+- CTR only if main image, search image, or ad creative optimization is in scope
 - CVR or conversion rate for PDP persuasive clarity
+- add-to-cart for purchase intent
+- image click depth for whether shoppers inspect proof images
 - Add-to-cart, coupon claim, or buy-box related proxy metrics when available
 - Share rate or engagement where campaign distribution matters
 - AARRR stage impacted by each image or module

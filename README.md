@@ -102,14 +102,14 @@ The agent workflow produces:
 3. PDP Visual Diagnosis
 4. Review Insight to Image Opportunity
 5. Competitor Visual Opportunity
-6. PDP Image Sequence Strategy
-7. Image-by-Image Production Brief
-8. A+ Module Direction
+6. PDP Detail Image Sequence Strategy
+7. Detail Image-by-Image Production Brief
+8. A+ Content Optimization Plan
 9. Premium Visual Taste Rules
 10. Measurement And Post-Launch Review Plan
 11. Final QA Checklist
 
-Each image brief includes:
+Each detail image brief includes:
 
 - Current Problem
 - Business Hypothesis
@@ -119,6 +119,14 @@ Each image brief includes:
 - Prompt
 - Compliance Notes
 - QA Checklist
+
+A+ output includes:
+
+- A+ Storyline Overview
+- Screen-by-Screen A+ Plan
+- A+ Module Image Design
+
+By default, the workflow focuses on detail page images, secondary gallery images, and A+ content. It does not include Amazon MAIN image recommendations unless main image optimization is explicitly requested.
 
 ## Project Structure
 

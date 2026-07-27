@@ -52,6 +52,13 @@ Use this file to give an AI agent structured Amazon PDP visual optimization cont
 - Secondary goal:
 - Business context:
 
+## Scope
+
+- Detail page images:
+- A+ content:
+- Secondary gallery images:
+- Main image optimization explicitly requested:
+
 ## Business Metrics
 
 - CTR:
@@ -80,12 +87,14 @@ The agent should output:
 3. PDP Visual Diagnosis
 4. Review Insight to Image Opportunity
 5. Competitor Visual Opportunity
-6. PDP Image Sequence Strategy
-7. Image-by-Image Production Brief
-8. A+ Module Direction
+6. PDP Detail Image Sequence Strategy
+7. Detail Image-by-Image Production Brief
+8. A+ Content Optimization Plan
 9. Premium Visual Taste Rules
 10. Measurement And Post-Launch Review Plan
 11. Final QA Checklist
+
+Default scope is detail page images and A+ content. Do not include Amazon MAIN image recommendations unless main image optimization is explicitly requested.
 
 Each image brief must include:
 
