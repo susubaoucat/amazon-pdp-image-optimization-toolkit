@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Amazon PDP Image Optimization Toolkit</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="intro">
+        <p class="eyebrow">Amazon PDP Image Optimization Toolkit</p>
+        <h1>Turn listing inputs into image production briefs.</h1>
+        <p class="intro-copy">Generate image-by-image PDP optimization plans, premium visual direction, copy hierarchy, AI prompts, and QA checklists for Amazon gallery and A+ visuals.</p>
+      </section>
+
+      <section class="workspace">
+        <form id="optimizer-form" class="panel input-panel">
+          <div class="panel-heading">
+            <h2>Inputs</h2>
+            <p>Paste practical project material. The demo uses local rules and does not send data anywhere.</p>
+          </div>
+
+          <label>
+            Product name
+            <input id="productName" type="text" value="Foldable cordless vacuum cleaner">
+          </label>
+
+          <label>
+            Product category
+            <input id="category" type="text" value="Home cleaning appliance">
+          </label>
+
+          <label>
+            Target market
+            <select id="market">
+              <option value="Japan">Japan</option>
+              <option value="United States">United States</option>
+              <option value="Germany">Germany</option>
+              <option value="France">France</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="Global">Global</option>
+            </select>
+          </label>
+
+          <label>
+            Optimization goal
+            <select id="goal">
+              <option value="premium visual upgrade">Premium visual upgrade</option>
+              <option value="review objection handling">Review objection handling</option>
+              <option value="clearer benefit proof">Clearer benefit proof</option>
+              <option value="market localization">Market localization</option>
+              <option value="full PDP image rebuild">Full PDP image rebuild</option>
+            </select>
+          </label>
+
+          <label>
+            Core product benefits
+            <textarea id="benefits">Foldable storage, lightweight daily handling, anti-tangle brush, strong suction, easy maintenance</textarea>
+          </label>
+
+          <label>
+            Current PDP screenshots or image notes
+            <textarea id="currentIssues">Current images explain features but do not clearly show compact storage, anti-tangle proof, or premium daily-use scenes.</textarea>
+          </label>
+
+          <label>
+            Own product reviews
+            <textarea id="ownReviews">Users like the compact design and cleaning performance, but some still want clearer proof that the product is easy to store and maintain.</textarea>
+          </label>
+
+          <label>
+            Competitor product reviews
+            <textarea id="competitorReviews">Competitor reviews often mention hair tangling, heavy daily handling, difficult dust cup cleaning, and weak edge cleaning.</textarea>
+          </label>
+
+          <label>
+            Competitor PDP or visual reference notes
+            <textarea id="competitorRefs">Competitors use crowded feature collages, heavy icon callouts, and generic lifestyle scenes. Few show compact storage in a believable apartment context.</textarea>
+          </label>
+
+          <button type="submit">Generate Image Plan</button>
+        </form>
+
+        <section class="panel output-panel" aria-live="polite">
+          <div class="panel-heading">
+            <h2>Output</h2>
+            <p>Copy this into a creative brief, AI image workflow, or production checklist.</p>
+          </div>
+          <div id="output" class="output-empty">Your image optimization plan will appear here.</div>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
