@@ -22,13 +22,10 @@ const translations = {
     categoryLabel: "产品品类",
     marketLabel: "目标市场",
     goalLabel: "优化目标",
-    benefitsLabel: "核心产品卖点",
-    currentIssuesLabel: "当前 PDP 截图或图片问题说明",
     currentPdpScreenshotsLabel: "我方当前页面总截图",
     competitorPdpScreenshotsLabel: "竞品当前页面总截图",
     ownReviewsLabel: "我方用户评论",
     competitorReviewsLabel: "竞品用户评论",
-    competitorRefsLabel: "竞品 PDP 或视觉参考说明",
     reviewFileHelper: "上传 TXT、CSV、TSV、XLSX 或 XLS 评论文件，也可以在下方补充粘贴说明。",
     screenshotHelper: "上传一张或多张 JPG、PNG、WebP 截图。",
     submitButton: "生成图片方案",
@@ -130,13 +127,10 @@ const translations = {
     categoryLabel: "商品カテゴリ",
     marketLabel: "対象市場",
     goalLabel: "最適化目標",
-    benefitsLabel: "主要ベネフィット",
-    currentIssuesLabel: "現在の PDP 画像メモ",
     currentPdpScreenshotsLabel: "自社の現在 PDP 全体スクリーンショット",
     competitorPdpScreenshotsLabel: "競合の現在 PDP 全体スクリーンショット",
     ownReviewsLabel: "自社商品のレビュー",
     competitorReviewsLabel: "競合商品のレビュー",
-    competitorRefsLabel: "競合 PDP またはビジュアル参考",
     reviewFileHelper: "TXT、CSV、TSV、XLSX、XLS のレビューファイルをアップロードできます。下にメモを貼り付けることもできます。",
     screenshotHelper: "JPG、PNG、WebP のスクリーンショットを1枚以上アップロードできます。",
     submitButton: "画像プランを生成",
@@ -238,13 +232,10 @@ const translations = {
     categoryLabel: "Product category",
     marketLabel: "Target market",
     goalLabel: "Optimization goal",
-    benefitsLabel: "Core product benefits",
-    currentIssuesLabel: "Current PDP screenshots or image notes",
     currentPdpScreenshotsLabel: "Current PDP full-page screenshots",
     competitorPdpScreenshotsLabel: "Competitor PDP full-page screenshots",
     ownReviewsLabel: "Own product reviews",
     competitorReviewsLabel: "Competitor product reviews",
-    competitorRefsLabel: "Competitor PDP or visual reference notes",
     reviewFileHelper: "Upload TXT, CSV, TSV, XLSX, or XLS review files. You can also paste notes below.",
     screenshotHelper: "Upload one or more JPG, PNG, or WebP screenshots.",
     submitButton: "Generate Image Plan",
@@ -739,20 +730,26 @@ function detectConcerns(...texts) {
 }
 
 function readFormData() {
+  const ownReviewText = uploadState.ownReviewFiles.map((file) => file.text).join("\n");
+  const competitorReviewText = uploadState.competitorReviewFiles.map((file) => file.text).join("\n");
+  const hasCurrentScreenshots = uploadState.currentPdpScreenshots.length > 0;
+  const hasCompetitorScreenshots = uploadState.competitorPdpScreenshots.length > 0;
+  const productContext = `${value("category") || "Amazon product"}, ${value("goal") || "premium visual upgrade"}`;
   return {
     productName: value("productName") || "the product",
     category: value("category") || "Amazon product",
     market: value("market") || "Global",
     goal: value("goal") || "premium visual upgrade",
-    benefits: value("benefits") || "core product benefits",
-    currentIssues: value("currentIssues") || "Current PDP images need clearer visual proof.",
-    ownReviews: value("ownReviews"),
-    competitorReviews: value("competitorReviews"),
-    competitorRefs: value("competitorRefs"),
-    uploadText: [
-      ...uploadState.ownReviewFiles.map((file) => file.text),
-      ...uploadState.competitorReviewFiles.map((file) => file.text)
-    ].join("\n"),
+    benefits: productContext,
+    currentIssues: hasCurrentScreenshots
+      ? "Use the uploaded current PDP screenshots to identify image order, message clarity, visual proof gaps, and taste issues."
+      : "No current PDP screenshot uploaded yet. Diagnose likely issues from product context and uploaded reviews.",
+    ownReviews: ownReviewText,
+    competitorReviews: competitorReviewText,
+    competitorRefs: hasCompetitorScreenshots
+      ? "Use the uploaded competitor PDP screenshots to identify visual sameness, missing proof, clutter, and differentiation opportunities."
+      : "",
+    uploadText: [ownReviewText, competitorReviewText].join("\n"),
     uploadedMaterials: {
       ownReviewFiles: uploadState.ownReviewFiles.map((file) => file.name),
       competitorReviewFiles: uploadState.competitorReviewFiles.map((file) => file.name),
