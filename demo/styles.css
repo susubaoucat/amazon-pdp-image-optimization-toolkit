@@ -36,13 +36,39 @@ body {
   margin-bottom: 28px;
 }
 
+.topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 12px;
+}
+
 .eyebrow {
-  margin: 0 0 12px;
+  margin: 0;
   color: var(--accent-dark);
   font-size: 13px;
   font-weight: 750;
   letter-spacing: 0;
   text-transform: uppercase;
+}
+
+.language-control {
+  display: flex;
+  align-items: center;
+  grid-template-columns: none;
+  gap: 10px;
+  width: auto;
+  min-width: 186px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.language-control select {
+  width: 112px;
+  min-height: 36px;
+  padding: 7px 10px;
+  font-size: 13px;
 }
 
 h1,
@@ -269,5 +295,17 @@ button:hover {
 
   .input-panel {
     position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .language-control {
+    justify-content: space-between;
+    width: 100%;
   }
 }

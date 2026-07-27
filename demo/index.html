@@ -9,30 +9,40 @@
   <body>
     <main class="app-shell">
       <section class="intro">
-        <p class="eyebrow">Amazon PDP Image Optimization Toolkit</p>
-        <h1>Turn listing inputs into image production briefs.</h1>
-        <p class="intro-copy">Generate image-by-image PDP optimization plans, premium visual direction, copy hierarchy, AI prompts, and QA checklists for Amazon gallery and A+ visuals.</p>
+        <div class="topbar">
+          <p class="eyebrow">Amazon PDP Image Optimization Toolkit</p>
+          <label class="language-control">
+            <span data-i18n="languageLabel">Language</span>
+            <select id="languageSelect" aria-label="Language">
+              <option value="zh">中文</option>
+              <option value="ja">日本語</option>
+              <option value="en">English</option>
+            </select>
+          </label>
+        </div>
+        <h1 data-i18n="heroTitle">Turn listing inputs into image production briefs.</h1>
+        <p class="intro-copy" data-i18n="heroCopy">Generate image-by-image PDP optimization plans, premium visual direction, copy hierarchy, AI prompts, and QA checklists for Amazon gallery and A+ visuals.</p>
       </section>
 
       <section class="workspace">
         <form id="optimizer-form" class="panel input-panel">
           <div class="panel-heading">
-            <h2>Inputs</h2>
-            <p>Paste practical project material. The demo uses local rules and does not send data anywhere.</p>
+            <h2 data-i18n="inputsTitle">Inputs</h2>
+            <p data-i18n="inputsCopy">Paste practical project material. The demo uses local rules and does not send data anywhere.</p>
           </div>
 
           <label>
-            Product name
+            <span data-i18n="productNameLabel">Product name</span>
             <input id="productName" type="text" value="Foldable cordless vacuum cleaner">
           </label>
 
           <label>
-            Product category
+            <span data-i18n="categoryLabel">Product category</span>
             <input id="category" type="text" value="Home cleaning appliance">
           </label>
 
           <label>
-            Target market
+            <span data-i18n="marketLabel">Target market</span>
             <select id="market">
               <option value="Japan">Japan</option>
               <option value="United States">United States</option>
@@ -44,7 +54,7 @@
           </label>
 
           <label>
-            Optimization goal
+            <span data-i18n="goalLabel">Optimization goal</span>
             <select id="goal">
               <option value="premium visual upgrade">Premium visual upgrade</option>
               <option value="review objection handling">Review objection handling</option>
@@ -55,39 +65,39 @@
           </label>
 
           <label>
-            Core product benefits
+            <span data-i18n="benefitsLabel">Core product benefits</span>
             <textarea id="benefits">Foldable storage, lightweight daily handling, anti-tangle brush, strong suction, easy maintenance</textarea>
           </label>
 
           <label>
-            Current PDP screenshots or image notes
+            <span data-i18n="currentIssuesLabel">Current PDP screenshots or image notes</span>
             <textarea id="currentIssues">Current images explain features but do not clearly show compact storage, anti-tangle proof, or premium daily-use scenes.</textarea>
           </label>
 
           <label>
-            Own product reviews
+            <span data-i18n="ownReviewsLabel">Own product reviews</span>
             <textarea id="ownReviews">Users like the compact design and cleaning performance, but some still want clearer proof that the product is easy to store and maintain.</textarea>
           </label>
 
           <label>
-            Competitor product reviews
+            <span data-i18n="competitorReviewsLabel">Competitor product reviews</span>
             <textarea id="competitorReviews">Competitor reviews often mention hair tangling, heavy daily handling, difficult dust cup cleaning, and weak edge cleaning.</textarea>
           </label>
 
           <label>
-            Competitor PDP or visual reference notes
+            <span data-i18n="competitorRefsLabel">Competitor PDP or visual reference notes</span>
             <textarea id="competitorRefs">Competitors use crowded feature collages, heavy icon callouts, and generic lifestyle scenes. Few show compact storage in a believable apartment context.</textarea>
           </label>
 
-          <button type="submit">Generate Image Plan</button>
+          <button type="submit" data-i18n="submitButton">Generate Image Plan</button>
         </form>
 
         <section class="panel output-panel" aria-live="polite">
           <div class="panel-heading">
-            <h2>Output</h2>
-            <p>Copy this into a creative brief, AI image workflow, or production checklist.</p>
+            <h2 data-i18n="outputTitle">Output</h2>
+            <p data-i18n="outputCopy">Copy this into a creative brief, AI image workflow, or production checklist.</p>
           </div>
-          <div id="output" class="output-empty">Your image optimization plan will appear here.</div>
+          <div id="output" class="output-empty" data-i18n="emptyOutput">Your image optimization plan will appear here.</div>
         </section>
       </section>
     </main>
