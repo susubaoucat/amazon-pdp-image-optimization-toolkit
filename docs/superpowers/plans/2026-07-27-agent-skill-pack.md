@@ -2,9 +2,9 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Convert the project from a demo-first toolkit into a cross-agent Amazon PDP visual optimization skill pack with an agent-readable brief format.
+**Goal:** Convert the project from a demo-first toolkit into a cross-agent Amazon PDP visual growth and image production skill pack with an agent-readable brief format.
 
-**Architecture:** Add a canonical `skills/amazon-pdp-visual-optimizer/` workflow, install-ready Codex and Claude Code skill entrypoints, and an `AMAZON-PDP-BRIEF.md` format template. Keep the existing demo, but reframe it as a workflow preview rather than a true AI analyzer.
+**Architecture:** Add a canonical `skills/amazon-pdp-visual-optimizer/` workflow with two layers: business metrics and funnel strategy first, image-by-image production briefs second. Add install-ready Codex and Claude Code skill entrypoints, plus an `AMAZON-PDP-BRIEF.md` format template. Keep the existing demo, but reframe it as a workflow preview rather than a true AI analyzer.
 
 **Tech Stack:** Markdown skill files, repository-discovered `.agents/skills`, Claude Code `.claude/skills`, static HTML demo, Node-based structure tests using `assert`.
 
@@ -17,6 +17,7 @@
 - Create `skills/amazon-pdp-visual-optimizer/references/premium-visual-rules.md`: high-end listing image taste rules.
 - Create `skills/amazon-pdp-visual-optimizer/references/amazon-image-compliance.md`: practical Amazon visual compliance reminders.
 - Create `skills/amazon-pdp-visual-optimizer/references/review-insight-to-image-brief.md`: rules for turning own and competitor reviews into image opportunities.
+- Create `skills/amazon-pdp-visual-optimizer/references/business-metrics-and-validation.md`: rules for connecting CTR, CVR, conversion rate, share rate, AARRR, and post-launch review to visual decisions.
 - Create `AMAZON-PDP-BRIEF.md`: agent-readable brief format template.
 - Create `.agents/skills/amazon-pdp-visual-optimizer/SKILL.md`: Codex auto-discovery entrypoint.
 - Create `.claude/skills/amazon-pdp-visual-optimizer/SKILL.md`: Claude Code auto-discovery entrypoint.
@@ -54,7 +55,8 @@ const references = [
   "output-structure.md",
   "premium-visual-rules.md",
   "amazon-image-compliance.md",
-  "review-insight-to-image-brief.md"
+  "review-insight-to-image-brief.md",
+  "business-metrics-and-validation.md"
 ];
 
 references.forEach((file) => {
@@ -86,6 +88,7 @@ git commit -m "test: define cross-agent skill structure"
 - Create: `skills/amazon-pdp-visual-optimizer/references/premium-visual-rules.md`
 - Create: `skills/amazon-pdp-visual-optimizer/references/amazon-image-compliance.md`
 - Create: `skills/amazon-pdp-visual-optimizer/references/review-insight-to-image-brief.md`
+- Create: `skills/amazon-pdp-visual-optimizer/references/business-metrics-and-validation.md`
 
 - [ ] **Step 1: Create canonical `SKILL.md`**
 
@@ -101,11 +104,12 @@ Use this skill to turn Amazon PDP materials into a designer-ready image optimiza
 
 ## Required Mindset
 
-- Treat the task as ecommerce visual strategy and image production, not generic listing copywriting.
+- Treat the task as ecommerce visual growth strategy and image production, not generic listing copywriting.
 - Use the user's uploaded files, screenshots, review tables, and notes as the primary evidence.
 - Separate own-product evidence from competitor evidence.
 - If a file, screenshot, or review source is unavailable or unreadable, state that limitation and continue with lower confidence.
 - Do not invent product features, certifications, test results, or Amazon claims.
+- Do not invent CTR, CVR, conversion rate, share rate, or AARRR results. If data is not provided, write hypotheses and validation plans.
 - Do not output a `Positive Prompt` or `Negative Prompt` field. Use one field named `Prompt`.
 
 ## Workflow
@@ -117,19 +121,21 @@ Use this skill to turn Amazon PDP materials into a designer-ready image optimiza
    - Own product review files.
    - Competitor product review files.
 2. Read `references/review-insight-to-image-brief.md` when reviews are present.
-3. Read `references/premium-visual-rules.md` before writing image prompts.
-4. Read `references/amazon-image-compliance.md` before finalizing image tasks.
-5. Read `references/output-structure.md` and follow its section order.
-6. Produce a visual production brief that a designer can immediately use to make listing images.
+3. Read `references/business-metrics-and-validation.md` before deciding image sequence strategy.
+4. Read `references/premium-visual-rules.md` before writing image prompts.
+5. Read `references/amazon-image-compliance.md` before finalizing image tasks.
+6. Read `references/output-structure.md` and follow its section order.
+7. Produce a visual production brief that a designer can immediately use to make listing images.
 
 ## Output Rules
 
 - Start with a short material summary.
 - Explain what was actually inspected.
+- Connect the project to a business goal such as CTR lift, CVR improvement, conversion-rate optimization, share-rate growth, AARRR stage improvement, or design effect validation.
 - Convert review patterns into image opportunities, not good/bad review excerpts.
 - Use image-by-image planning as the main body.
 - Each image must have one conversion job.
-- Each image brief must include: `Current Problem`, `New Image Task`, `Visual Direction`, `In-Image Copy`, `Prompt`, `Compliance Notes`, and `QA Checklist`.
+- Each image brief must include: `Current Problem`, `Business Hypothesis`, `New Image Task`, `Visual Direction`, `In-Image Copy`, `Prompt`, `Compliance Notes`, and `QA Checklist`.
 - Keep image prompts specific, premium, and product-first.
 - Keep claims careful and tied to provided evidence.
 ```
@@ -155,7 +161,21 @@ State which materials were available:
 
 Also state any missing or unreadable material.
 
-## 2. PDP Visual Diagnosis
+## 2. Business Goal And Funnel Diagnosis
+
+Connect the project to business data awareness:
+
+- CTR
+- CVR
+- Conversion rate
+- Share rate
+- AARRR funnel stage
+- Data review
+- Design effect validation
+
+If real data is not provided, describe the hypothesis and the data needed to validate it.
+
+## 3. PDP Visual Diagnosis
 
 Summarize the current image system problem in production language:
 
@@ -168,17 +188,17 @@ Summarize the current image system problem in production language:
 - Review concern not answered visually
 - A+ story does not build trust
 
-## 3. Review Insight to Image Opportunity
+## 4. Review Insight to Image Opportunity
 
 Separate own-product signals from competitor signals.
 
 Do not quote review excerpts unless the user asks. Summarize patterns and convert them into image opportunities.
 
-## 4. Competitor Visual Opportunity
+## 5. Competitor Visual Opportunity
 
 Explain what competitors communicate better and where they leave visual gaps.
 
-## 5. PDP Image Sequence Strategy
+## 6. PDP Image Sequence Strategy
 
 Recommend a new image order. Each image should have a clear conversion job.
 
@@ -187,13 +207,14 @@ Use this format:
 | New Order | Image Role | Conversion Job | Why It Matters |
 | --- | --- | --- | --- |
 
-## 6. Image-by-Image Production Brief
+## 7. Image-by-Image Production Brief
 
 For each image, use:
 
 ### Image N: Role Name
 
 - Current Problem:
+- Business Hypothesis:
 - New Image Task:
 - Visual Direction:
 - In-Image Copy:
@@ -201,7 +222,7 @@ For each image, use:
 - Compliance Notes:
 - QA Checklist:
 
-## 7. A+ Module Direction
+## 8. A+ Module Direction
 
 Plan a simple story flow:
 
@@ -211,13 +232,68 @@ Plan a simple story flow:
 4. Real usage context
 5. Maintenance, storage, comparison, or trust module
 
-## 8. Premium Visual Taste Rules
+## 9. Premium Visual Taste Rules
 
 List the visual rules that should guide image creation.
 
-## 9. Final QA Checklist
+## 10. Measurement And Post-Launch Review Plan
+
+Define how the design should be judged after launch:
+
+- CTR for main image and search/listing attraction
+- CVR or conversion rate for PDP persuasive clarity
+- Add-to-cart, coupon claim, or buy-box related proxy metrics when available
+- Share rate or engagement where campaign distribution matters
+- AARRR stage impacted by each image or module
+- A/B test idea and success criteria
+- What to keep, iterate, or remove during data review
+
+## 11. Final QA Checklist
 
 Check product accuracy, visual quality, compliance, readability, and conversion clarity.
+```
+
+- [ ] **Step 2A: Create `business-metrics-and-validation.md`**
+
+```markdown
+# Business Metrics And Validation
+
+Use business metrics to guide visual decisions without inventing data.
+
+## Funnel Awareness
+
+- CTR: usually connected to main image, first impression, search result clarity, offer visibility, and hero crop.
+- CVR and conversion rate: usually connected to PDP gallery clarity, proof images, comparison images, trust modules, and objection handling.
+- Share rate: usually connected to campaign assets, distinctive visual hooks, social proof, and memorable product storytelling.
+- AARRR: map visual decisions to acquisition, activation, retention, referral, or revenue.
+
+## Full-Chain Project Logic
+
+Explain the chain:
+
+1. Early analysis
+2. User and competitor insight
+3. Creative reasoning
+4. Visual strategy
+5. Image production brief
+6. Delivery checklist
+7. Launch review and data validation
+
+## When Data Is Provided
+
+- Mention the provided metric and date range if available.
+- Explain which visual decision it supports.
+- Avoid claiming causation unless an A/B test or controlled comparison supports it.
+
+## When Data Is Missing
+
+- Write a business hypothesis.
+- List the metrics needed to validate the design.
+- Suggest one practical A/B test or before/after review method.
+
+## Output Requirement
+
+Every image sequence recommendation should connect to a funnel role or business hypothesis before moving into visual production details.
 ```
 
 - [ ] **Step 3: Create `premium-visual-rules.md`**
@@ -384,6 +460,8 @@ const brief = fs.readFileSync(briefPath, "utf8");
   "## Own Reviews",
   "## Competitor Reviews",
   "## Optimization Goal",
+  "## Business Metrics",
+  "## Measurement Plan",
   "## Output Requirements",
   "Prompt"
 ].forEach((token) => {
@@ -459,23 +537,45 @@ Use this file to give an AI agent structured Amazon PDP visual optimization cont
 - Secondary goal:
 - Business context:
 
+## Business Metrics
+
+- CTR:
+- CVR:
+- Conversion rate:
+- Share rate:
+- AARRR stage:
+- Existing A/B test result:
+- Data review notes:
+- Design effect validation goal:
+
+## Measurement Plan
+
+- Metric to watch after launch:
+- A/B test idea:
+- Success criteria:
+- What to keep if it works:
+- What to iterate if it does not work:
+
 ## Output Requirements
 
 The agent should output:
 
 1. Material Summary
-2. PDP Visual Diagnosis
-3. Review Insight to Image Opportunity
-4. Competitor Visual Opportunity
-5. PDP Image Sequence Strategy
-6. Image-by-Image Production Brief
-7. A+ Module Direction
-8. Premium Visual Taste Rules
-9. Final QA Checklist
+2. Business Goal And Funnel Diagnosis
+3. PDP Visual Diagnosis
+4. Review Insight to Image Opportunity
+5. Competitor Visual Opportunity
+6. PDP Image Sequence Strategy
+7. Image-by-Image Production Brief
+8. A+ Module Direction
+9. Premium Visual Taste Rules
+10. Measurement And Post-Launch Review Plan
+11. Final QA Checklist
 
 Each image brief must include:
 
 - Current Problem
+- Business Hypothesis
 - New Image Task
 - Visual Direction
 - In-Image Copy

@@ -137,6 +137,13 @@ h1 {
   line-height: 1.5;
 }
 
+.panel-heading .helper-note {
+  margin-top: 8px;
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 700;
+}
+
 label {
   display: grid;
   gap: 8px;
