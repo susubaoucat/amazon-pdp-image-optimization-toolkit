@@ -13,14 +13,18 @@ const brief = fs.readFileSync(briefPath, "utf8");
   "# AMAZON-PDP-BRIEF.md",
   "## Product",
   "## Target Market",
-  "## Own A+ Materials",
-  "## Competitor A+ Materials",
+  "## Own PDP And A+ Materials",
+  "## Competitor PDP And A+ Materials",
   "## Own Reviews",
   "## Competitor Reviews",
   "## Optimization Goal",
   "## Business Metrics",
   "## Measurement Plan",
   "## Output Requirements",
+  "PDP Detail Image Sequence Strategy",
+  "Detail Image-by-Image Production Brief",
+  "A+ Detail Proof Prompt Pack",
+  "Detail Proof Layer",
   "Prompt"
 ].forEach((token) => {
   assert(brief.includes(token), `Brief template should include ${token}.`);

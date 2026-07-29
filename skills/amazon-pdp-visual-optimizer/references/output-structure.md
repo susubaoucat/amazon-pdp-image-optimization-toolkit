@@ -1,6 +1,6 @@
 # Output Structure
 
-Use this section order for every Amazon A+ visual optimization brief.
+Use this section order for every Amazon PDP visual optimization brief.
 
 The same structure can be used in Markdown output or an HTML report. For a shareable `.html` deliverable, also follow `html-report-output.md`.
 
@@ -10,17 +10,17 @@ State which materials were available:
 
 - Product information
 - Business metrics or data review notes
-- Own A+ screenshots or A+ long images
-- Competitor A+ screenshots or A+ visual references
+- Own PDP screenshots, secondary gallery images, A+ screenshots, or A+ long images
+- Competitor PDP screenshots, secondary gallery images, A+ screenshots, or A+ visual references
 - Own reviews
 - Competitor reviews
 - Target market
 - Optimization goal
-- Scope: A+ content by default; secondary gallery/detail images or main image only if explicitly requested
+- Scope: secondary gallery/detail images and A+ content by default; main image only if explicitly requested
 
 Also state any missing or unreadable material.
 
-Default scope is A+ content optimization only. Do not include detail image-by-image production briefs unless the user explicitly requests secondary gallery or detail image optimization. Do not include Amazon MAIN image recommendations unless the user explicitly requests main image optimization or provides main-image materials.
+Default scope is secondary gallery/detail images and A+ content. Do not include Amazon MAIN image recommendations unless the user explicitly requests main image optimization or provides main-image materials.
 
 ## 2. Business Goal And Funnel Diagnosis
 
@@ -30,6 +30,7 @@ Connect the project to business data awareness:
 - CVR
 - Conversion rate
 - add-to-cart
+- image click depth
 - A+ module engagement
 - Share rate
 - AARRR funnel stage
@@ -38,7 +39,7 @@ Connect the project to business data awareness:
 
 If real data is not provided, describe the hypothesis and the data needed to validate it.
 
-For A+ optimization, prioritize CVR, conversion rate, add-to-cart, A+ module engagement, review concern changes, and post-launch data review. Mention CTR only when the scope includes main image, search image, or ad creative optimization.
+For secondary gallery and A+ optimization, prioritize CVR, conversion rate, add-to-cart, image click depth, A+ module engagement, review concern changes, and post-launch data review. Mention CTR only when the scope includes main image, search image, or ad creative optimization.
 
 ## 3. PDP Visual Diagnosis
 
@@ -63,7 +64,31 @@ Do not quote review excerpts unless the user asks. Summarize patterns and conver
 
 Explain what competitors communicate better and where they leave visual gaps.
 
-## 6. A+ Content Optimization Plan
+## 6. PDP Detail Image Sequence Strategy
+
+Recommend a new detail page image order. Each image should have a clear conversion job. Do not start with a MAIN image unless main-image optimization is explicitly in scope.
+
+Use this format:
+
+| New Order | Image Role | Funnel Role | Conversion Job | Why It Matters |
+| --- | --- | --- | --- | --- |
+
+## 7. Detail Image-by-Image Production Brief
+
+For each detail image, use:
+
+### Image N: Role Name
+
+- Current Problem:
+- Business Hypothesis:
+- New Image Task:
+- Visual Direction:
+- In-Image Copy:
+- Prompt:
+- Compliance Notes:
+- QA Checklist:
+
+## 8. A+ Content Optimization Plan
 
 Do not treat A+ as a short module list. A+ should be a full page story system that extends the detail image strategy.
 
@@ -108,42 +133,41 @@ For each A+ screen, provide 3-5 concrete module image ideas. Use this format:
 
 - Module Type:
 - Content Task:
+- Layout Role:
 - Scene Description:
 - In-Image Copy:
 - Prompt:
+- Detail Proof Layer:
 - Design Notes:
 - A+ Compliance Notes:
 
 Design rule: within one A+ screen, use no more than one pure lifestyle or atmosphere image. Most images should embed the product, product part, display, brush head, tank, base, accessory, app screen, or real usage proof when those materials are provided.
 
-## 7. Optional Detail Image-by-Image Production Brief
+When a module is intended for AI image generation, the `Detail Proof Layer` should state the exact evidence structure to include, such as:
 
-Only include this section when the user explicitly requests secondary gallery or detail image optimization.
+- Main scene evidence
+- Product close-up or inset
+- Swatches, dimension line, step strip, or proof object
+- Small claim boundary or disclaimer
 
-For each requested detail image, use:
+This prevents A+ prompts from becoming empty lifestyle images and keeps feature banners credible.
 
-### Image N: Role Name
+When planning multiple module images, vary `Layout Role` across the sequence. Avoid repeating the same left-text/right-product/inset composition across adjacent images. Use layout roles such as Editorial Active Scene, Split Proof System, Macro Detail Hero, Low-Angle Use Proof, Process Strip, Buying Confidence Snapshot, or Quiet Brand Breather.
 
-- Current Problem:
-- Business Hypothesis:
-- New Image Task:
-- Visual Direction:
-- In-Image Copy:
-- Prompt:
-- Compliance Notes:
-- QA Checklist:
+For richer Amazon listing rhythm, the `Layout Role` may also use recipe-style names such as Flagship Feature Mosaic, Dominant Macro With Step Rail, Low-Profile Cinematic Proof, White-Space Capability Grid, Split Lifestyle And Explanation, Black Tech Spec Board, or Tall-Page Rhythm Stack. Use these as structural recipes, not as competitor designs to copy.
 
-## 8. Premium Visual Taste Rules
+## 9. Premium Visual Taste Rules
 
 List the visual rules that should guide image creation.
 
-## 9. Measurement And Post-Launch Review Plan
+## 10. Measurement And Post-Launch Review Plan
 
 Define how the design should be judged after launch:
 
 - CTR only if main image, search image, or ad creative optimization is in scope
-- CVR or conversion rate for A+ persuasive clarity
+- CVR or conversion rate for PDP persuasive clarity
 - add-to-cart for purchase intent
+- image click depth for whether shoppers inspect proof images
 - A+ module engagement for whether shoppers inspect proof modules
 - Add-to-cart, coupon claim, or buy-box related proxy metrics when available
 - Share rate or engagement where campaign distribution matters
@@ -151,6 +175,6 @@ Define how the design should be judged after launch:
 - A/B test idea and success criteria
 - What to keep, iterate, or remove during data review
 
-## 10. Final QA Checklist
+## 11. Final QA Checklist
 
 Check product accuracy, visual quality, compliance, readability, and conversion clarity.

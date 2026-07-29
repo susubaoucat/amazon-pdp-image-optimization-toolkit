@@ -14,14 +14,16 @@ const combined = `${skill}\n${output}\n${brief}`;
 
 [
   "A+ content",
-  "Default scope is A+ content optimization only",
-  "Do not include detail image-by-image production briefs unless the user explicitly requests secondary gallery or detail image optimization",
+  "secondary gallery/detail images",
+  "Default scope is secondary gallery/detail images and A+ content",
+  "Detail Image-by-Image Production Brief",
   "Do not include Amazon MAIN image recommendations unless the user explicitly requests main image optimization",
   "CVR",
   "add-to-cart",
+  "image click depth",
   "A+ module engagement"
 ].forEach((token) => {
-  assert(combined.includes(token), `A+ only scope should include ${token}.`);
+  assert(combined.includes(token), `Secondary image and A+ scope should include ${token}.`);
 });
 
-console.log("a plus only scope ok");
+console.log("secondary image and a plus scope ok");

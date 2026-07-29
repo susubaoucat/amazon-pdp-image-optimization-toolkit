@@ -18,9 +18,13 @@ const output = fs.readFileSync(
   "Screen N",
   "Image N-N",
   "Module Type",
+  "Layout Role",
   "Scene Description",
+  "Detail Proof Layer",
   "Design Notes",
-  "A+ Compliance Notes"
+  "A+ Compliance Notes",
+  "Main scene evidence",
+  "Product close-up or inset"
 ].forEach((token) => {
   assert(output.includes(token), `A+ output logic should include ${token}.`);
 });

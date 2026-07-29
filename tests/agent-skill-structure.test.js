@@ -19,6 +19,7 @@ const claudeSkill = path.join(root, ".claude", "skills", "amazon-pdp-visual-opti
 const references = [
   "output-structure.md",
   "premium-visual-rules.md",
+  "reference-taste-guardrails.md",
   "amazon-image-compliance.md",
   "review-insight-to-image-brief.md",
   "business-metrics-and-validation.md"

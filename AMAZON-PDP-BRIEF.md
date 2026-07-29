@@ -1,6 +1,6 @@
 # AMAZON-PDP-BRIEF.md
 
-Use this file to give an AI agent structured Amazon A+ visual optimization context.
+Use this file to give an AI agent structured Amazon secondary image and A+ visual optimization context.
 
 ## Product
 
@@ -18,15 +18,18 @@ Use this file to give an AI agent structured Amazon A+ visual optimization conte
 - Local shopping concerns:
 - Visual localization notes:
 
-## Own A+ Materials
+## Own PDP And A+ Materials
 
+- Current PDP screenshot files:
+- Current secondary gallery images:
 - Current A+ screenshot files:
 - Current A+ long images:
 - Current A+ screenshots:
 - Known visual problems:
 
-## Competitor A+ Materials
+## Competitor PDP And A+ Materials
 
+- Competitor PDP screenshot files:
 - Competitor A+ screenshot files:
 - Competitor product names:
 - Competitor visual strengths:
@@ -51,11 +54,12 @@ Use this file to give an AI agent structured Amazon A+ visual optimization conte
 - Primary goal:
 - Secondary goal:
 - Business context:
+- AI image generation goal:
 
 ## Scope
 
+- Secondary gallery/detail images:
 - A+ content:
-- Secondary gallery/detail images explicitly requested:
 - Main image optimization explicitly requested:
 
 ## Business Metrics
@@ -84,6 +88,7 @@ Preferred output mode:
 - Default deliverable: HTML report
 - Fallback: Markdown output
 - Chat response: short chat summary with the generated file path when an HTML report is created
+- Optional AI handoff: A+ Detail Proof Prompt Pack for direct image-generation tests
 
 The agent should output:
 
@@ -93,13 +98,33 @@ The agent should output:
 3. PDP Visual Diagnosis
 4. Review Insight to Image Opportunity
 5. Competitor Visual Opportunity
-6. A+ Content Optimization Plan
-7. Optional Detail Image-by-Image Production Brief
-8. Premium Visual Taste Rules
-9. Measurement And Post-Launch Review Plan
-10. Final QA Checklist
+6. PDP Detail Image Sequence Strategy
+7. Detail Image-by-Image Production Brief
+8. A+ Content Optimization Plan
+9. Premium Visual Taste Rules
+10. Measurement And Post-Launch Review Plan
+11. Final QA Checklist
 
-Default scope is A+ content optimization only. Do not include detail image-by-image production briefs unless secondary gallery or detail image optimization is explicitly requested. Do not include Amazon MAIN image recommendations unless main image optimization is explicitly requested.
+When AI image generation handoff is requested, also output:
+
+- Brand Art Direction Layer
+- Product Invariants
+- A+ Detail Proof Prompt Template
+- Tested or recommended A+ selling point prompts
+- Image-generation QA Checklist
+
+Default scope is secondary gallery/detail images and A+ content. Do not include Amazon MAIN image recommendations unless main image optimization is explicitly requested.
+
+Each detail image brief must include:
+
+- Current Problem
+- Business Hypothesis
+- New Image Task
+- Visual Direction
+- In-Image Copy
+- Prompt
+- Compliance Notes
+- QA Checklist
 
 Each A+ module image must include:
 
@@ -108,6 +133,7 @@ Each A+ module image must include:
 - Scene Description
 - In-Image Copy
 - Prompt
+- Detail Proof Layer
 - Design Notes
 - A+ Compliance Notes
 

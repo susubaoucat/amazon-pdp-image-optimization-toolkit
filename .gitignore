@@ -1,1 +1,27 @@
+# Local reports and generated project outputs
 *-report.html
+reports/
+deliverables/
+reference/
+
+# Customer/private input materials
+*.xlsx
+*.xls
+*.csv
+
+# Generated images and local media experiments
+*.png
+*.jpg
+*.jpeg
+*.webp
+!examples/**/*.png
+!examples/**/*.jpg
+!examples/**/*.jpeg
+!examples/**/*.webp
+
+# Local environment and OS files
+.DS_Store
+.env
+.env.*
+node_modules/
+npm-debug.log*

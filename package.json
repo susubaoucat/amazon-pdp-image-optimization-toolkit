@@ -1,0 +1,17 @@
+{
+  "name": "amazon-pdp-image-optimization-toolkit",
+  "version": "0.1.0",
+  "description": "Data-to-image brief workflow for Amazon PDP secondary image and A+ content optimization.",
+  "type": "commonjs",
+  "scripts": {
+    "test": "for f in tests/*.js; do node \"$f\" || exit 1; done"
+  },
+  "keywords": [
+    "amazon",
+    "pdp",
+    "a-plus-content",
+    "ecommerce",
+    "ai-image-generation",
+    "creative-brief"
+  ]
+}
