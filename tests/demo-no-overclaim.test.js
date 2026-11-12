@@ -9,8 +9,11 @@ const combined = `${html}\n${js}`;
 
 [
   "workflow preview",
+  "Local workflow preview",
   "AI Agent Skill Pack",
-  "AMAZON-PDP-BRIEF.md"
+  "AMAZON-PDP-BRIEF.md",
+  "keyword",
+  "image content is not read"
 ].forEach((token) => {
   assert(combined.includes(token), `Demo should mention ${token}.`);
 });

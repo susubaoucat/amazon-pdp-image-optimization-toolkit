@@ -1,6 +1,6 @@
 # Amazon PDP AI Image Brief Generator
 
-Turn reviews, competitor PDPs, product data, and business metrics into ready-to-generate Amazon secondary image and A+ content briefs.
+This toolkit guarantees a high aesthetic floor — even someone with no design taste will not produce a low-quality image direction. The floor is the written standard already in this repo: premium taste guardrails and a commercial photography quality floor that reject weak references, crowded layouts, and generic AI styling before a prompt is handed off. It produces briefs, prompts, and checklists for Amazon secondary images and A+ content. It turns reviews, competitor PDPs, product data, and business metrics into ready-to-generate Amazon secondary image and A+ content briefs. It does not generate images itself.
 
 This cross-agent AI Agent toolkit helps ecommerce teams move from messy PDP materials to practical image-generation deliverables:
 
@@ -23,7 +23,7 @@ This project is a data-to-image-brief workflow for Amazon PDP creative work. It 
 
 The core assets are:
 
-- `AMAZON-PDP-BRIEF.md`: an agent-readable brief format for Amazon PDP image and A+ optimization.
+- `AMAZON-PDP-BRIEF.md`: a filled cordless-vacuum sample of the agent brief, plus the output contract. It is not a blank form.
 - `skills/amazon-pdp-visual-optimizer`: the canonical workflow Skill.
 - `.agents/skills`: a Codex entrypoint.
 - `.claude/skills`: a Claude Code entrypoint.
@@ -223,6 +223,7 @@ skills/amazon-pdp-visual-optimizer/references/html-report-output.md
 ```text
 amazon-pdp-image-optimization-toolkit/
 ├─ AMAZON-PDP-BRIEF.md
+├─ LICENSE
 ├─ README.md
 ├─ skills/
 │  └─ amazon-pdp-visual-optimizer/
@@ -234,10 +235,13 @@ amazon-pdp-image-optimization-toolkit/
 │  └─ skills/amazon-pdp-visual-optimizer/
 ├─ templates/
 ├─ prompts/
-│  └─ a-plus-detail-proof-prompts.md
+│  ├─ a-plus-detail-proof-prompts.md
 │  └─ premium-ecommerce-taste-guardrails.md
 ├─ checklists/
 ├─ examples/
+│  ├─ cordless-vacuum-image-optimization.md
+│  ├─ cordless-vacuum-brief.sample.json
+│  └─ before-after/
 ├─ tests/
 └─ demo/
 ```
@@ -248,6 +252,60 @@ Data finds the image opportunity. AI turns the opportunity into a visual plan. D
 
 The workflow avoids crowded image collages, excessive arrows, fake technology effects, unclear claims, and generic AI styling. It favors product-first composition, believable proof, clean copy hierarchy, realistic usage context, measurable creative reasoning, premium ecommerce visual quality, and Detail Proof Layers that make feature images feel credible instead of empty.
 
+## Example Output
+
+The cordless vacuum write-up in `examples/cordless-vacuum-image-optimization.md` is the source example. `AMAZON-PDP-BRIEF.md` fills the agent input from that example. `examples/cordless-vacuum-brief.sample.json` restates the same example with the section order and field names in `skills/amazon-pdp-visual-optimizer/references/output-structure.md`.
+
+Fields the source example does not specify are `null`. The file does not add metrics. `schemaNote` and `source` only identify the file; they are not fields the skill asks an agent to output. The main-image prompt stays in the diagnosis because the default scope is secondary gallery images and A+ content.
+
+One secondary-image object from that file:
+
+```json
+{
+  "image": "Image 1: Core Cleaning Proof Infographic",
+  "currentProblem": "Feature infographic lists suction power but does not connect it to daily cleaning pain points.",
+  "businessHypothesis": "A proof image for dust, crumbs, pet hair, and edge cleaning is the example's response to the cleaning-confidence signal. No conversion metric is provided.",
+  "newImageTask": "Rebuild as a core benefit proof image focused on dust, pet hair, and edge cleaning.",
+  "visualDirection": "Product angled beside controlled debris zones and a simple edge-cleaning proof. Product as anchor on the right, clean proof zones on the left, one short headline. Show realistic floor debris and avoid exaggerated mess.",
+  "inImageCopy": "Headline: \"Strong everyday cleaning.\" Supporting callouts: dust, crumbs, pet hair, edge cleaning.",
+  "prompt": "Create a premium Amazon product infographic for a foldable cordless vacuum cleaner, focused on strong everyday cleaning for dust, crumbs, pet hair, and edge areas. Use a clean product-first layout with one short headline area, accurate product placement, restrained callouts, and visual proof through realistic floor debris zones and an edge-cleaning scene. Keep the product as the visual anchor, preserve accurate structure, color, material, scale, and logo placement, and use realistic studio lighting with soft shadows. The design should feel refined and easy to scan, avoiding cluttered icon walls, excessive arrows, cheap sales badges, fake glow effects, exaggerated claims, crowded copy, and any invented product functions.",
+  "complianceNotes": "Avoid exaggerated claims and invented product functions. Keep debris believable.",
+  "qaChecklist": [
+    "One message",
+    "Believable debris",
+    "Readable hierarchy",
+    "Accurate product",
+    "Premium spacing"
+  ]
+}
+```
+
+## Before And After
+
+Real before-and-after PDP screenshots are not in this repository. Do not treat a generated product photo as a substitute. This slot is reserved so the owner can drop in a real pair later.
+
+Use the cordless vacuum example. The before image should be a weak existing secondary image: the feature infographic that lists suction power without connecting it to dust, pet hair, and edge cleaning. The after image should be the improved result produced from that example's Image 2 brief: product as the anchor, controlled debris zones, and one short headline.
+
+Suggested files:
+
+- `examples/before-after/cordless-vacuum-secondary-before.png`
+- `examples/before-after/cordless-vacuum-secondary-after.png`
+
+Alt text to use once those files exist:
+
+- Before: `Before: cordless vacuum secondary image that lists suction power without showing dust, pet hair, or edge-cleaning proof.`
+- After: `After: cordless vacuum secondary image rebuilt from the toolkit brief, with the product as the anchor and restrained proof for dust, crumbs, pet hair, and edge cleaning.`
+
+When both files are real screenshots, embed them here:
+
+```markdown
+![Before: cordless vacuum secondary image that lists suction power without showing dust, pet hair, or edge-cleaning proof.](examples/before-after/cordless-vacuum-secondary-before.png)
+
+![After: cordless vacuum secondary image rebuilt from the toolkit brief, with the product as the anchor and restrained proof for dust, crumbs, pet hair, and edge cleaning.](examples/before-after/cordless-vacuum-secondary-after.png)
+```
+
+Drop-in notes also live in `examples/before-after/README.md`. `.gitignore` already allows image files under `examples/`.
+
 ## Demo
 
 Open the local workflow preview:
@@ -256,7 +314,9 @@ Open the local workflow preview:
 demo/index.html
 ```
 
-The demo helps users understand the input structure and output format. For real screenshot, review, and business-metric analysis, use the Skill inside Codex, Claude Code, or another AI agent.
+The page is labeled **Local workflow preview**. It fills a fixed image-plan template. Review text is matched against a small keyword list. Uploaded screenshots are listed by file name and shown as thumbnails; image content is not read. A full analysis step in the skill would inspect those screenshots, review patterns, competitor pages, and any metrics you provide, then write the brief from that evidence. Stronger structured brief preview is already on the roadmap.
+
+The demo is a workflow preview. It shows the input and output shape, but it does not perform real AI image or review analysis by itself. For screenshot, review, and business-metric analysis, use the Skill inside Codex, Claude Code, or another AI agent. The demo does not generate images.
 
 ## Tests
 
@@ -272,7 +332,7 @@ npm test
 - Add image-generation handoff formats for common AI image tools.
 - Add more category examples, including beauty, home appliance, consumer electronics, and pet products.
 - Add market-specific examples for Japan, US, Germany, France, Spain, and Italy.
-- Add sample `AMAZON-PDP-BRIEF.md` files with before/after PDP strategy.
+- Add the real before/after cordless vacuum screenshots described in the Before And After section. The filenames and alt text are reserved; the image files are not in the repo yet.
 - Add optional export to Markdown or PDF.
 - Add stronger demo support for structured brief preview.
 
