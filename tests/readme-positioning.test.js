@@ -32,5 +32,12 @@ const readme = fs.readFileSync(path.join(root, "README.md"), "utf8");
 });
 
 assert(readme.includes("The demo is a workflow preview"), "README should frame the demo as a workflow preview.");
+assert(readme.includes("high aesthetic floor"), "README should lead with the aesthetic-floor positioning.");
+assert(readme.includes("It does not generate images itself."), "README should say the toolkit does not generate images.");
+assert(readme.includes("Local workflow preview"), "README should label the demo as a local workflow preview.");
+assert(readme.includes("examples/cordless-vacuum-brief.sample.json"), "README should link the JSON example.");
+assert(readme.includes("examples/before-after/cordless-vacuum-secondary-before.png"), "README should reserve the before image filename.");
+assert(readme.includes("examples/before-after/cordless-vacuum-secondary-after.png"), "README should reserve the after image filename.");
+assert(readme.includes("image content is not read"), "README should say the demo does not read screenshot content.");
 
 console.log("readme positioning ok");

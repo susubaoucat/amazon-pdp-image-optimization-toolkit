@@ -1,0 +1,336 @@
+{
+  "schemaNote": "Keys follow the section order and field names in skills/amazon-pdp-visual-optimizer/references/output-structure.md. Wording is taken from examples/cordless-vacuum-image-optimization.md. Null means the published example does not specify that field. schemaNote and source identify this file; they are not agent output fields. The source example's main-image prompt stays in PDP Visual Diagnosis only, because default scope excludes MAIN image recommendations unless that work is requested. screenByScreenPlan is null because the example has a module table and does not include per-screen story fields. This file does not add CTR, CVR, conversion, share-rate, or AARRR results.",
+  "source": "examples/cordless-vacuum-image-optimization.md",
+  "executiveSummary": {
+    "scope": "Secondary gallery images and A+ content. The source example also diagnoses the main image; that note stays in the diagnosis and is not a main-image optimization request.",
+    "product": "Foldable cordless vacuum cleaner",
+    "category": "Home cleaning appliance",
+    "targetMarket": "Japan",
+    "keyRisk": "The current gallery lists features without answering compact-home daily-use concerns, and several images are generic or text-heavy.",
+    "keyOpportunity": "Separate visual proofs for cleaning confidence, foldable storage, hair tangling, and daily maintenance.",
+    "firstPriority": "Rebuild the suction feature infographic as a core cleaning proof image for dust, crumbs, pet hair, and edge cleaning.",
+    "optimizationGoal": "Make the PDP feel more premium and better answer daily-use concerns in compact homes."
+  },
+  "materialSummary": {
+    "productInformation": "Foldable cordless vacuum cleaner. Core benefits stated in the example: foldable storage, lightweight handling, anti-tangle brush, strong suction, easy maintenance.",
+    "businessMetricsOrDataReviewNotes": null,
+    "ownPdpScreenshots": null,
+    "competitorPdpScreenshots": null,
+    "ownReviews": "Summarized signals only. Review files are not included.",
+    "competitorReviews": "Summarized signal only: competitor reviews complain about hair tangling. Review files are not included.",
+    "targetMarket": "Japan",
+    "optimizationGoal": "Make the PDP feel more premium and better answer daily-use concerns in compact homes.",
+    "scope": "Secondary gallery/detail images and A+ content. Main image optimization is not requested.",
+    "missingOrUnreadable": [
+      "Named model",
+      "Named included accessories",
+      "PDP and A+ screenshot files",
+      "Competitor product names",
+      "Review file exports",
+      "CTR, CVR, conversion rate, add-to-cart, image click depth, A+ module engagement, share rate, AARRR stage, and A/B test results"
+    ]
+  },
+  "businessGoalAndFunnelDiagnosis": {
+    "ctr": null,
+    "cvr": null,
+    "conversionRate": null,
+    "addToCart": null,
+    "imageClickDepth": null,
+    "aPlusModuleEngagement": null,
+    "shareRate": null,
+    "aarrrStage": null,
+    "dataReview": null,
+    "designEffectValidation": null,
+    "hypothesis": "The example treats a more premium gallery, plus images that answer storage, cleaning confidence, hair tangling, and maintenance, as the creative response for compact-home shoppers. No performance result is stated.",
+    "dataNeededToValidate": "The published example does not name a metric, date range, or A/B result."
+  },
+  "pdpVisualDiagnosis": [
+    {
+      "image": "Image 1",
+      "diagnosis": "Main image is acceptable but product appears slightly small. Recorded from the published example. Default toolkit scope does not recommend Amazon MAIN image changes unless main image optimization is explicitly requested.",
+      "rewriteDirection": "Enlarge product within frame and keep pure white background.",
+      "prompt": "Create a clean Amazon main product image for a foldable cordless vacuum cleaner, showing only the actual vacuum and included accessories on a pure white background. The product should be centered, sharply lit, in focus, and occupy most of the frame while preserving accurate shape, color, material, brush head, handle, folding joint, logo placement, and included parts. Use professional studio lighting, realistic shadows, and a product-first composition suitable for Amazon search and PDP use. Do not add lifestyle props, decorative text, badges, watermarks, fake features, extra accessories, unrealistic glow effects, or altered product structure."
+    },
+    {
+      "image": "Image 2",
+      "diagnosis": "Feature infographic lists suction power but does not connect it to daily cleaning pain points.",
+      "rewriteDirection": "Rebuild as a core benefit proof image focused on dust, pet hair, and edge cleaning."
+    },
+    {
+      "image": "Image 3",
+      "diagnosis": "Foldable design is shown, but storage benefit is not emotionally clear.",
+      "rewriteDirection": "Show the folded product in a compact apartment storage scene."
+    },
+    {
+      "image": "Image 4",
+      "diagnosis": "Lifestyle image feels generic and does not match Japanese home scale.",
+      "rewriteDirection": "Use a smaller, cleaner apartment scene with restrained props."
+    },
+    {
+      "image": "Image 5",
+      "diagnosis": "Anti-tangle feature is described with too much text.",
+      "rewriteDirection": "Use a brush close-up and simple before/after hair proof."
+    },
+    {
+      "image": "Image 6",
+      "diagnosis": "Maintenance information is missing.",
+      "rewriteDirection": "Add a clean water/dust cup removal and washing image."
+    }
+  ],
+  "reviewInsightToImageOpportunity": {
+    "ownProduct": [
+      {
+        "reviewSignal": "Users care about storage and daily handling.",
+        "imageOpportunity": "Add a lightweight folded-storage image."
+      },
+      {
+        "reviewSignal": "Users want stronger cleaning confidence.",
+        "imageOpportunity": "Add a suction proof infographic tied to dust, debris, and edge cleaning."
+      },
+      {
+        "reviewSignal": "Users dislike complicated maintenance.",
+        "imageOpportunity": "Add an easy-maintenance module with removable cup and washable parts."
+      }
+    ],
+    "competitor": [
+      {
+        "reviewSignal": "Competitor reviews complain about hair tangling.",
+        "imageOpportunity": "Add an anti-tangle brush proof image."
+      }
+    ]
+  },
+  "competitorVisualOpportunity": {
+    "whatCompetitorsCommunicateBetter": null,
+    "visualGaps": null,
+    "shopperSignalUsed": "Competitor reviews complain about hair tangling."
+  },
+  "pdpDetailImageSequenceStrategy": [
+    {
+      "newOrder": 1,
+      "imageRole": "Core Cleaning Proof Infographic",
+      "funnelRole": null,
+      "conversionJob": "Connect suction performance to real household cleaning concerns.",
+      "whyItMatters": "Users want stronger cleaning confidence, and the current feature infographic does not connect suction to daily cleaning pain points."
+    },
+    {
+      "newOrder": 2,
+      "imageRole": "Foldable Storage Scene",
+      "funnelRole": null,
+      "conversionJob": "Prove compact storage for small homes.",
+      "whyItMatters": "Users care about storage and daily handling, and the folded product needs a clear compact-apartment context."
+    },
+    {
+      "newOrder": 3,
+      "imageRole": "Anti-Tangle Brush Proof",
+      "funnelRole": null,
+      "conversionJob": "Turn competitor hair-tangle complaints into a visual advantage.",
+      "whyItMatters": "Competitor reviews complain about hair tangling, and the current anti-tangle image uses too much text."
+    },
+    {
+      "newOrder": 4,
+      "imageRole": "Easy Maintenance Image",
+      "funnelRole": null,
+      "conversionJob": "Reduce concerns about cleaning the device after use.",
+      "whyItMatters": "Users dislike complicated maintenance, and maintenance information is missing from the current gallery."
+    }
+  ],
+  "detailImageByImageProductionBrief": [
+    {
+      "image": "Image 1: Core Cleaning Proof Infographic",
+      "currentProblem": "Feature infographic lists suction power but does not connect it to daily cleaning pain points.",
+      "businessHypothesis": "A proof image for dust, crumbs, pet hair, and edge cleaning is the example's response to the cleaning-confidence signal. No conversion metric is provided.",
+      "newImageTask": "Rebuild as a core benefit proof image focused on dust, pet hair, and edge cleaning.",
+      "visualDirection": "Product angled beside controlled debris zones and a simple edge-cleaning proof. Product as anchor on the right, clean proof zones on the left, one short headline. Show realistic floor debris and avoid exaggerated mess.",
+      "inImageCopy": "Headline: \"Strong everyday cleaning.\" Supporting callouts: dust, crumbs, pet hair, edge cleaning.",
+      "prompt": "Create a premium Amazon product infographic for a foldable cordless vacuum cleaner, focused on strong everyday cleaning for dust, crumbs, pet hair, and edge areas. Use a clean product-first layout with one short headline area, accurate product placement, restrained callouts, and visual proof through realistic floor debris zones and an edge-cleaning scene. Keep the product as the visual anchor, preserve accurate structure, color, material, scale, and logo placement, and use realistic studio lighting with soft shadows. The design should feel refined and easy to scan, avoiding cluttered icon walls, excessive arrows, cheap sales badges, fake glow effects, exaggerated claims, crowded copy, and any invented product functions.",
+      "complianceNotes": "Avoid exaggerated claims and invented product functions. Keep debris believable.",
+      "qaChecklist": [
+        "One message",
+        "Believable debris",
+        "Readable hierarchy",
+        "Accurate product",
+        "Premium spacing"
+      ]
+    },
+    {
+      "image": "Image 2: Foldable Storage Scene",
+      "currentProblem": "Foldable design is shown, but storage benefit is not emotionally clear. The lifestyle image also feels generic and does not match Japanese home scale.",
+      "businessHypothesis": "A folded-storage scene in a compact apartment is the example's response to storage and daily-handling concerns. No conversion metric is provided.",
+      "newImageTask": "Show the folded product in a compact apartment storage scene.",
+      "visualDirection": "Folded vacuum stored beside a sofa or inside a narrow closet corner. Small apartment scene, vacuum folded, clear spatial comparison, calm negative space. Show the real folding mechanism without changing proportions.",
+      "inImageCopy": "Headline: \"Fits compact spaces.\" Supporting text: \"Fold and store after daily cleaning.\"",
+      "prompt": "Create a premium Amazon PDP lifestyle image for a foldable cordless vacuum cleaner, focused on compact storage for a Japanese apartment. Show the product in an accurate folded form beside a small sofa, closet corner, or apartment entryway, with clear spatial proof that it is easy to store after daily cleaning. Use clean composition, believable scale, soft natural lighting, restrained neutral colors, and a refined visual hierarchy with room for one short headline. Preserve the product's real folding structure, brush head, color, material, and proportions, and make the image feel practical, refined, and trustworthy rather than decorative, crowded, or overly promotional.",
+      "complianceNotes": "Keep the folding joint, scale, and Japanese home context believable. Do not stereotype the setting.",
+      "qaChecklist": [
+        "Product scale is believable",
+        "Japanese home context is realistic",
+        "Folding joint remains accurate"
+      ]
+    },
+    {
+      "image": "Image 3: Anti-Tangle Brush Proof",
+      "currentProblem": "Anti-tangle feature is described with too much text.",
+      "businessHypothesis": "A brush close-up with simple hair-management proof is the example's response to competitor hair-tangle complaints. No conversion metric is provided.",
+      "newImageTask": "Use a brush close-up and simple before/after hair proof.",
+      "visualDirection": "Brush head close-up with simple hair-management proof. Large brush close-up, one clean proof area, restrained labels. Do not invent internal brush structure.",
+      "inImageCopy": "Headline: \"Designed to reduce hair tangles.\" Supporting text: \"Cleaner brush maintenance after each use.\"",
+      "prompt": "Create a conversion-focused Amazon PDP image for a foldable cordless vacuum cleaner that turns the user pain point of hair tangling into clear visual proof. Show an accurate close-up of the brush head and a simple realistic hair-management proof, with clean labels and a premium product-first layout. Use controlled studio lighting, realistic material detail, clear headline hierarchy, and enough negative space for readability. Keep all product details accurate and believable, especially the brush shape and mechanism. The image should look like a high-quality brand listing, not a generic AI ad or low-end marketplace graphic, and should not invent internal parts or exaggerate the claim.",
+      "complianceNotes": "Do not invent internal parts or exaggerate the claim.",
+      "qaChecklist": [
+        "No fake brush structure",
+        "Claim is careful",
+        "Close-up is sharp",
+        "Text is not crowded"
+      ]
+    },
+    {
+      "image": "Image 4: Easy Maintenance Image",
+      "currentProblem": "Maintenance information is missing.",
+      "businessHypothesis": "An empty, rinse, and reattach image is the example's response to complicated-maintenance concerns. No conversion metric is provided.",
+      "newImageTask": "Add a clean dust-cup removal and washing image.",
+      "visualDirection": "Dust cup removal and washable component layout. Product section detail, removable cup, clean water cue, step-by-step visual logic. Only show washable parts if they are actually washable.",
+      "inImageCopy": "Headline: \"Simple daily maintenance.\" Supporting callouts: empty, rinse, reattach.",
+      "prompt": "Create a clean premium Amazon PDP image for a foldable cordless vacuum cleaner, focused on simple daily maintenance. Show the dust cup removal and washable component process with clear step-by-step visual logic: empty, rinse, and reattach. Use accurate product details, refined studio lighting, realistic shadows, restrained labels, and a simple composition that feels trustworthy and easy to understand. Keep the product shape, cup structure, color, material, and scale accurate. Do not show parts as washable unless supported by the product information, and avoid crowded instruction graphics, excessive icons, fake water effects, or low-end marketplace styling.",
+      "complianceNotes": "Do not show parts as washable unless supported by the product information.",
+      "qaChecklist": [
+        "Maintenance claim is accurate",
+        "Sequence is easy to read",
+        "No unsupported washable parts"
+      ]
+    }
+  ],
+  "aPlusContentOptimizationPlan": {
+    "storylineOverview": [
+      {
+        "screen": "Hero Banner",
+        "storyTask": "Establish refined cleaning solution",
+        "narrativeArc": null,
+        "emotionalCurve": null,
+        "businessRole": "Establish refined cleaning solution"
+      },
+      {
+        "screen": "Compact Living Module",
+        "storyTask": "Match Japanese home context",
+        "narrativeArc": null,
+        "emotionalCurve": null,
+        "businessRole": "Match Japanese home context"
+      },
+      {
+        "screen": "Cleaning Proof Module",
+        "storyTask": "Explain performance",
+        "narrativeArc": null,
+        "emotionalCurve": null,
+        "businessRole": "Explain performance for dust, crumbs, pet hair, and edges"
+      },
+      {
+        "screen": "Anti-Tangle Module",
+        "storyTask": "Address review concern",
+        "narrativeArc": null,
+        "emotionalCurve": null,
+        "businessRole": "Address the hair-tangle review concern"
+      },
+      {
+        "screen": "Maintenance Module",
+        "storyTask": "Reduce post-use friction",
+        "narrativeArc": null,
+        "emotionalCurve": null,
+        "businessRole": "Reduce post-use friction"
+      }
+    ],
+    "screenByScreenPlan": null,
+    "moduleImageDesign": [
+      {
+        "image": "Hero Banner",
+        "moduleType": "Hero Banner",
+        "contentTask": "Establish refined cleaning solution",
+        "layoutRole": null,
+        "sceneDescription": "Premium product in calm home environment",
+        "inImageCopy": null,
+        "prompt": null,
+        "detailProofLayer": null,
+        "designNotes": "Prompt focus from the example: Product-first premium hero. The example does not include a full Prompt or Detail Proof Layer for this module.",
+        "aPlusComplianceNotes": null
+      },
+      {
+        "image": "Compact Living Module",
+        "moduleType": "Compact Living Module",
+        "contentTask": "Match Japanese home context",
+        "layoutRole": null,
+        "sceneDescription": "Folded storage beside compact furniture",
+        "inImageCopy": null,
+        "prompt": null,
+        "detailProofLayer": null,
+        "designNotes": "Prompt focus from the example: Space-saving proof. The example does not include a full Prompt or Detail Proof Layer for this module.",
+        "aPlusComplianceNotes": null
+      },
+      {
+        "image": "Cleaning Proof Module",
+        "moduleType": "Cleaning Proof Module",
+        "contentTask": "Explain performance",
+        "layoutRole": null,
+        "sceneDescription": "Dust, crumbs, pet hair, edges",
+        "inImageCopy": null,
+        "prompt": null,
+        "detailProofLayer": null,
+        "designNotes": "Prompt focus from the example: Benefit proof infographic. The example does not include a full Prompt or Detail Proof Layer for this module.",
+        "aPlusComplianceNotes": null
+      },
+      {
+        "image": "Anti-Tangle Module",
+        "moduleType": "Anti-Tangle Module",
+        "contentTask": "Address review concern",
+        "layoutRole": null,
+        "sceneDescription": "Brush close-up and simple hair proof",
+        "inImageCopy": null,
+        "prompt": null,
+        "detailProofLayer": null,
+        "designNotes": "Prompt focus from the example: Close-up technical proof. The example does not include a full Prompt or Detail Proof Layer for this module.",
+        "aPlusComplianceNotes": null
+      },
+      {
+        "image": "Maintenance Module",
+        "moduleType": "Maintenance Module",
+        "contentTask": "Reduce post-use friction",
+        "layoutRole": null,
+        "sceneDescription": "Empty, rinse, reattach",
+        "inImageCopy": null,
+        "prompt": null,
+        "detailProofLayer": null,
+        "designNotes": "Prompt focus from the example: Step-by-step usability. The example does not include a full Prompt or Detail Proof Layer for this module.",
+        "aPlusComplianceNotes": null
+      }
+    ]
+  },
+  "premiumVisualTasteRules": [
+    "Use quiet, clean compositions with controlled negative space.",
+    "Keep product accurate and dominant.",
+    "Prefer soft natural or studio lighting over high-contrast effects.",
+    "Use restrained neutral backgrounds with one subtle product or brand accent.",
+    "Use short copy and clear hierarchy.",
+    "Avoid cheap sales badges, crowded collages, random gradients, excessive arrows, fake glow, and generic AI luxury styling."
+  ],
+  "measurementAndPostLaunchReviewPlan": {
+    "note": "The published example does not include a measurement plan or any performance numbers. Null fields are unspecified, not measured zeros.",
+    "ctr": null,
+    "cvr": null,
+    "conversionRate": null,
+    "addToCart": null,
+    "imageClickDepth": null,
+    "aPlusModuleEngagement": null,
+    "shareRate": null,
+    "aarrrStage": null,
+    "abTestIdea": null,
+    "successCriteria": null,
+    "whatToKeep": null,
+    "whatToIterate": null,
+    "whatToRemove": null
+  },
+  "finalQaChecklist": [
+    "Each image solves one customer question.",
+    "Review concerns are turned into visual proof.",
+    "Product shape, color, material, and scale remain accurate.",
+    "The visual set feels consistent across gallery and A+.",
+    "The Japanese market context feels believable and not stereotyped.",
+    "The output looks premium enough for a high-quality brand listing."
+  ]
+}

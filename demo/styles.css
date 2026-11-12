@@ -45,12 +45,31 @@ body {
 }
 
 .eyebrow {
-  margin: 0;
+  margin: 0 0 10px;
   color: var(--accent-dark);
   font-size: 13px;
   font-weight: 750;
   letter-spacing: 0;
   text-transform: uppercase;
+}
+
+.preview-badge {
+  display: inline-block;
+  margin: 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.preview-limit {
+  max-width: 760px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.55;
 }
 
 .language-control {

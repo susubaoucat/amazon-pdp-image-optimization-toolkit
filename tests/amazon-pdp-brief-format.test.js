@@ -32,5 +32,8 @@ const brief = fs.readFileSync(briefPath, "utf8");
 
 assert(!brief.includes("Positive Prompt"), "Brief template should not include Positive Prompt.");
 assert(!brief.includes("Negative Prompt"), "Brief template should not include Negative Prompt.");
+assert(brief.includes("Foldable cordless vacuum cleaner"), "Brief should be the filled cordless vacuum sample.");
+assert(brief.includes("Not provided"), "Brief should mark facts the example does not state.");
+assert(!/^-\s+Product name:\s*$/m.test(brief), "Brief should not leave the product name blank.");
 
 console.log("amazon pdp brief format ok");
